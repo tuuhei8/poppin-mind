@@ -32,7 +32,7 @@ Built with **React 18**, **Vite**, and **React Router v6**.
 
 4. Open **http://localhost:5173** in your browser.
 
----
+
 
 ## Project Structure
 
