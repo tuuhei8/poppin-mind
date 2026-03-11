@@ -13,9 +13,6 @@ Built with **React 18**, **Vite**, and **React Router v6**.
 - **Node.js** (version 16 or higher) — [Download here](https://nodejs.org/)
 - **npm** (comes with Node.js)
 
-### Installation
-
-1. **Unzip** the downloaded file and open a terminal in the project folder:
 
    ```bash
    cd popping-mind
