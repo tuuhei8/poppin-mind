@@ -1,13 +1,12 @@
 const mongoose = require('mongoose')
 
-const servicesSchema = mongoose.Schema({
+const qualificationSchema = mongoose.Schema({
   icon: String,
   title: String,
-  desc: String,
-  link: String
+  desc: String
 })
 
-servicesSchema.set('toJSON', {
+qualificationSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
@@ -15,4 +14,4 @@ servicesSchema.set('toJSON', {
   }
 })
 
-module.exports = mongoose.model('Service', servicesSchema)
+module.exports = mongoose.model('Qualification', qualificationSchema)

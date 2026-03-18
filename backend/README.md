@@ -4,61 +4,80 @@ Description of current backend functionality.
 
 ---
 
-### Setup for development
+## Setup for development
 
-1. Run npm install
+1. Within terminal navigate to poppin-mind/backend and run npm install
 2. Add a .env file
-3. Within the .env file add PORT=3000 (or another port number if you prefer) and MONGODB_URI=link_to_db_here
+3. Within the .env file add PORT=3000 (or another port number if you prefer)
+4. Set up a mongo database for development and testing, then add MONGODB_URI=link_to_db_here to .env
 
-### Endpoints and database
+In the app.js file the statement 'app.use(express.static('dist'))' is, for the time being, commented out. If uncommented it serves the frontend production build from 'dist'.
 
-This backend uses two mongoose schemas to look for two collections of documents within a MongoDB database,
-services and coaches.
+### Templates for documents
 
-There are four endpoints currently available:
+This backend uses three mongoose schemas to handle three collections of documents within a MongoDB database,
+services, prices and qualifications.
 
-1. /api/services will GET all service documents
+Templates for setting up a new database, details may be adjusted as the development progresses:
 
-2. /api/services/:id will GET a service document matching the id parameter
+Notice: if copying and pasting to mongo's web interface make sure that the last field of the document does NOT have a puctuation mark at the end, only add punctuation in between fields.
 
-3. /api/coaches will GET all coach documents
-
-4. /api/coaches/:id will GET a coach document matching the id parameter
-
-All of the above endpoints can be tested with the test files found in the "rest-tests" folder (requires REST Client plugin for Visual Studio Code)
-
-### Document structure
-
-Notice: by default mongo stores the id field as "._id", but the mongoose schema model files here have been set to replace the field with ".id".
-
-1. The services schema includes fields "title", "description" and "price" with expected String value for each. Example of a service document as it should appear in response to a GET request:
+1. Template for a service document (you can copy the necessary fields into a new document, id should be set automatically by mongo)
 
     ```js
     {
-      "title": "example title string",
-      "description": "example description string",
-      "price": "example price string",
-      "id": "example id"
+      "_id": "included for the sake of example, do not copy/paste this field",
+      "icon": "",
+      "title": "",
+      "desc": "",
+      "link": ""
     }
     ```
-2. The coaches schema includes fields "name" with expected String value and "education" and "workExperience" with their value set to an Array containing a String or Strings. Example of a coach document as it should appear in response to a GET request:
 
-  ```js
-  {
-    "name": "Example name string",
-    "education": [
-      "example degree string 1",
-      "example degree string 2"
-    ],
-    "workExperience": [
-      "example work experience string 1",
-      "example work experience string 2"
-    ],
-    "id": "example id"
-  }
-  ```
+2. Template for a price document (you can copy the necessary fields into a new document, id should be set automatically by mongo)
 
-### Script commands
+    ```js
+    {
+      "_id": "included for the sake of example, do not copy/paste this field",
+      "title": "",
+      "desc": "",
+      "price": "",
+      "features": [""]
+    }
+    ```
+
+3. Template for a qualification document (you can copy the necessary fields into a new document, id should be set automatically by mongo):
+
+    ```js
+      {
+        "_id": "included for the sake of example, do not copy/paste this field",
+        "icon": "",
+        "title": "",
+        "desc": ""
+      }
+    ```
+
+## Endpoints
+
+There are six endpoints currently available:
+
+1. /api/services
+
+2. /api/services/:id
+
+3. /api/qualifications
+
+4. /api/qualifications/:id
+
+5. /api/prices
+
+6. /api/prices/:id
+
+All of the above endpoints can be tested with the test files found in the "rest-tests" folder (requires REST Client plugin for Visual Studio Code)
+
+Notice: by default mongo stores the id field as "._id", but the mongoose schema model files here have been set to replace the field with ".id".
+
+## Script commands
 
 1. Start in production mode
 
@@ -72,13 +91,13 @@ Notice: by default mongo stores the id field as "._id", but the mongoose schema 
     npm run dev
     ```
 
-3. Build UI (does not work at the time of writing as the frontend needs to function first)
+3. Build UI
 
     ```bash
     npm run build:ui
     ```
 
-4. Build UI & push to github (does not work at the time of writing as the frontend needs to function first)
+4. Build UI & push to github
 
     ```bash
     npm run deploy:full

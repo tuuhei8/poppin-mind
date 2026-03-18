@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import pricesSrevice from '../../services/prices'
 
 export default function Pricing() {
+  const [prices, setPrices] = useState([])
+  
+  useEffect(() => {
+    pricesSrevice.getAll().then(prices =>
+      setPrices(prices)
+    )
+  }, [])
+    
+
   return (
     <>
       <section className="page-hero">

@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import servicesService from '../../services/services'
 
 const services = [
   {
@@ -28,6 +30,14 @@ const services = [
 ]
 
 export default function Services() {
+  const [servicesDB, setServicesDB] = useState([])
+
+  useEffect(() => {
+    servicesService.getAll().then(servicesDB => 
+      setServicesDB(servicesDB)
+    )
+  }, [])
+  
   return (
     <>
       <section className="page-hero">

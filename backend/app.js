@@ -5,7 +5,8 @@ const logger = require('./utils/logger')
 const morgan = require('morgan')
 const middleware = require('./utils/middleware')
 const servicesRouter = require('./controllers/services')
-const coachesRouter = require('./controllers/coaches')
+const pricesRouter = require('./controllers/prices')
+const qualificationsRouter = require('./controllers/qualifications')
 
 const app = express()
 
@@ -23,7 +24,8 @@ mongoose.connect(config.MONGODB_URI)
 app.use(morgan('tiny'))
 
 app.use('/api/services', servicesRouter)
-app.use('/api/coaches', coachesRouter)
+app.use('/api/prices', pricesRouter)
+app.use('/api/qualifications', qualificationsRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)

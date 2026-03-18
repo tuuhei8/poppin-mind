@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 
-const coachSchema = mongoose.Schema({
-  name: String,
-  education: [String],
-  workExperience: [String]
+const pricesSchema = mongoose.Schema({
+  title: String,
+  desc: String,
+  price: String,
+  features: [String]
 })
 
-coachSchema.set('toJSON', {
+pricesSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
@@ -14,4 +15,4 @@ coachSchema.set('toJSON', {
   }
 })
 
-module.exports = mongoose.model('Coach', coachSchema)
+module.exports = mongoose.model('Price', pricesSchema)

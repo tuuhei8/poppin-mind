@@ -1,6 +1,16 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import qualificationService from '../../services/qualifications'
 
 export default function About() {
+  const [qualifications, setQualifications] = useState([])
+
+  useEffect(() => {
+    qualificationService.getAll().then(qualifications =>
+      setQualifications(qualifications)
+    )
+  }, [])
+
   return (
     <>
       <section className="page-hero">
