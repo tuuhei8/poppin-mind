@@ -10,7 +10,6 @@ export default function Pricing() {
       setPrices(prices)
     )
   }, [])
-    
 
   return (
     <>

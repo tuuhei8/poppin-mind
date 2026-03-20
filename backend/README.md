@@ -8,7 +8,7 @@ Description of current backend functionality.
 
 1. Within terminal navigate to poppin-mind/backend and run npm install
 2. Add a .env file
-3. Within the .env file add PORT=3000 (or another port number if you prefer)
+3. Within the .env file add PORT=3000 (or another port number if you prefer, adjust vite.config.js accordingly)
 4. Set up a mongo database for development and testing, then add MONGODB_URI=link_to_db_here to .env
 
 In the app.js file the statement 'app.use(express.static('dist'))' is, for the time being, commented out. If uncommented it serves the frontend production build from 'dist'.
