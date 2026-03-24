@@ -39,10 +39,9 @@ Notice: if copying and pasting to mongo's web interface make sure that the last 
     ```js
     {
       "_id": "included for the sake of example, do not copy/paste this field",
-      "title": "",
-      "desc": "",
-      "price": "",
-      "features": [""]
+      "onlineSession": { "price": "", "duration": "" },
+      "inPersonSession": { "price": "", "duration": "" },
+      "introductoryCall": { "price": "", "duration": "" }
     }
     ```
 

@@ -1,33 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const services = [
-  {
-    icon: '🧠',
-    title: 'Mental Coaching',
-    desc: 'Develop mental strength, improve focus, and build a resilient mindset that supports you in everyday life and beyond. Mental coaching helps you understand your thought patterns and reshape them into powerful tools for growth.',
-    link: '/services/mental-coaching',
-  },
-  {
-    icon: '🎯',
-    title: 'Solution-Focused Coaching',
-    desc: 'Instead of dwelling on problems, solution-focused coaching directs your energy toward the future you want. Together, we identify your goals, recognise your existing strengths, and create practical steps forward.',
-    link: '/services/solution-focused-coaching',
-  },
-  {
-    icon: '💬',
-    title: 'Solution-Focused Brief Therapy',
-    desc: 'A structured, short-term therapeutic approach that helps you create meaningful change in a focused timeframe. Ideal for those seeking professional support without long-term commitment.',
-    link: '/services/solution-focused-brief-therapy',
-  },
-  {
-    icon: '🐾',
-    title: 'Animal-Assisted Coaching',
-    desc: 'Animals have a unique ability to help us feel present, calm, and connected. In animal-assisted sessions, working alongside animals becomes a catalyst for insight, emotional awareness, and personal growth.',
-    link: '/services/animal-assisted-coaching',
-  },
-]
-
-export default function Services({ servicesDB }) {
+export default function Services({ services }) {
   return (
     <>
       <section className="page-hero">

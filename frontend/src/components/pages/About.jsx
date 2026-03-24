@@ -3,12 +3,44 @@ import { useEffect, useState } from 'react'
 import qualificationService from '../../services/qualifications'
 
 export default function About() {
-  const [qualifications, setQualifications] = useState([])
+  const [qualifications, setQualifications] = useState([
+              {
+                icon: '🎓',
+                title: 'Two Master\'s Degrees',
+                desc: 'Advanced academic training providing a strong theoretical and practical foundation.',
+              },
+              {
+                icon: '📚',
+                title: 'Psychology Teaching',
+                desc: 'Experience teaching psychology, deepening expertise in human behaviour and cognition.',
+              },
+              {
+                icon: '🤲',
+                title: 'Special Education',
+                desc: 'Work in special education, building skills in adaptive, empathetic support.',
+              },
+              {
+                icon: '🧠',
+                title: 'Mental Coaching Certification',
+                desc: 'Qualified mental coach with training in resilience, focus, and mindset development.',
+              },
+              {
+                icon: '🎯',
+                title: 'Solution-Focused Methods',
+                desc: 'Trained in solution-focused coaching and brief therapy approaches.',
+              },
+              {
+                icon: '🐾',
+                title: 'Animal-Assisted Interventions',
+                desc: 'Qualified to integrate animals into coaching sessions for deeper engagement.',
+              }
+            ])
 
   useEffect(() => {
-    qualificationService.getAll().then(qualifications =>
-      setQualifications(qualifications)
-    )
+    qualificationService
+    .getAll()
+    .then(qualifications => setQualifications(qualifications))
+    .catch(err => console.error(err))
   }, [])
 
   return (
@@ -60,38 +92,7 @@ export default function About() {
           </div>
 
           <div className="qualifications-list">
-            {[
-              {
-                icon: '🎓',
-                title: 'Two Master\'s Degrees',
-                desc: 'Advanced academic training providing a strong theoretical and practical foundation.',
-              },
-              {
-                icon: '📚',
-                title: 'Psychology Teaching',
-                desc: 'Experience teaching psychology, deepening expertise in human behaviour and cognition.',
-              },
-              {
-                icon: '🤲',
-                title: 'Special Education',
-                desc: 'Work in special education, building skills in adaptive, empathetic support.',
-              },
-              {
-                icon: '🧠',
-                title: 'Mental Coaching Certification',
-                desc: 'Qualified mental coach with training in resilience, focus, and mindset development.',
-              },
-              {
-                icon: '🎯',
-                title: 'Solution-Focused Methods',
-                desc: 'Trained in solution-focused coaching and brief therapy approaches.',
-              },
-              {
-                icon: '🐾',
-                title: 'Animal-Assisted Interventions',
-                desc: 'Qualified to integrate animals into coaching sessions for deeper engagement.',
-              },
-            ].map((q) => (
+            {qualifications.map((q) => (
               <div className="qualification-item fade-in" key={q.title}>
                 <div className="qualification-item__icon">{q.icon}</div>
                 <div>

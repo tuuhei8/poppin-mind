@@ -1,10 +1,14 @@
 const mongoose = require('mongoose')
 
-const pricesSchema = mongoose.Schema({
-  title: String,
-  desc: String,
+const priceDetails = mongoose.Schema({
   price: String,
-  features: [String]
+  duration: String
+})
+
+const pricesSchema = mongoose.Schema({
+  onlineSession: priceDetails,
+  inPersonSession: priceDetails,
+  introductoryCall: priceDetails
 })
 
 pricesSchema.set('toJSON', {

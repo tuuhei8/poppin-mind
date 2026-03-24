@@ -76,32 +76,7 @@ export default function Home({ services }) {
           </div>
 
           <div className="services-grid">
-            {[
-              {
-                icon: '🧠',
-                title: 'Mental Coaching',
-                desc: 'Build mental resilience, develop focus, and cultivate a mindset that supports your goals.',
-                link: '/services/mental-coaching',
-              },
-              {
-                icon: '🎯',
-                title: 'Solution-Focused Coaching',
-                desc: 'A future-oriented approach that helps you define goals and find practical steps forward.',
-                link: '/services/solution-focused-coaching',
-              },
-              {
-                icon: '💬',
-                title: 'Solution-Focused Brief Therapy',
-                desc: 'Short-term therapeutic support designed to create meaningful change efficiently.',
-                link: '/services/solution-focused-brief-therapy',
-              },
-              {
-                icon: '🐾',
-                title: 'Animal-Assisted Coaching',
-                desc: 'Working alongside animals to promote emotional connection, presence, and insight.',
-                link: '/services/animal-assisted-coaching',
-              },
-            ].map((s) => (
+            {services.map((s) => (
               <Link to={s.link} key={s.title} className="service-card fade-in">
                 <div className="service-card__icon">{s.icon}</div>
                 <h3 className="service-card__title">{s.title}</h3>

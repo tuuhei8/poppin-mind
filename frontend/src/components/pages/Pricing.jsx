@@ -3,12 +3,17 @@ import { useEffect, useState } from 'react'
 import pricesSrevice from '../../services/prices'
 
 export default function Pricing() {
-  const [prices, setPrices] = useState([])
-  
+  const [prices, setPrices] = useState({
+    onlineSession: { price: 'N/A', duration: 'N/A' },
+    inPersonSession: { price: 'N/A', duration: 'N/A' },
+    introductoryCall: { price: 'Free', duration: 'N/A' }
+  })
+
   useEffect(() => {
-    pricesSrevice.getAll().then(prices =>
-      setPrices(prices)
-    )
+    pricesSrevice
+    .getAll()
+    .then(prices => setPrices(prices[0]))
+    .catch(err => console.error(err))
   }, [])
 
   return (
@@ -35,9 +40,9 @@ export default function Pricing() {
                 Coaching or therapy from the comfort of your own space.
               </p>
               <div className="pricing-card__price">
-                €50 <span>/ session</span>
+                €{prices.onlineSession.price} <span>/ session</span>
               </div>
-              <p className="pricing-card__duration">45 minutes</p>
+              <p className="pricing-card__duration">{prices.onlineSession.duration} minutes</p>
               <ul className="pricing-card__features">
                 <li>Video call via a secure platform</li>
                 <li>Flexible scheduling</li>
@@ -55,9 +60,9 @@ export default function Pricing() {
                 Face-to-face coaching in a calm, welcoming environment.
               </p>
               <div className="pricing-card__price">
-                €60 <span>/ session</span>
+                €{prices.inPersonSession.price} <span>/ session</span>
               </div>
-              <p className="pricing-card__duration">60 minutes</p>
+              <p className="pricing-card__duration">{prices.inPersonSession.duration} minutes</p>
               <ul className="pricing-card__features">
                 <li>Private, comfortable setting</li>
                 <li>Full hour of dedicated time</li>
@@ -75,9 +80,9 @@ export default function Pricing() {
                 A free, no-obligation conversation to see if we're a good fit.
               </p>
               <div className="pricing-card__price">
-                Free
+                {prices.introductoryCall.price}
               </div>
-              <p className="pricing-card__duration">15–20 minutes</p>
+              <p className="pricing-card__duration">{prices.introductoryCall.duration} minutes</p>
               <ul className="pricing-card__features">
                 <li>Get to know each other</li>
                 <li>Discuss your needs and goals</li>
