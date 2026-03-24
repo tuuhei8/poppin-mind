@@ -49,9 +49,9 @@ export default function App() {
 
     useEffect(() => {
       servicesService
-      .getAll()
-      .then(services => setServices(services))
-      .catch(err => console.error(err))
+        .getAll()
+        .then(services => setServices(services))
+        .catch(err => console.error(err))
     }, [])
 
   return (

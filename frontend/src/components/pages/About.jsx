@@ -38,9 +38,9 @@ export default function About() {
 
   useEffect(() => {
     qualificationService
-    .getAll()
-    .then(qualifications => setQualifications(qualifications))
-    .catch(err => console.error(err))
+      .getAll()
+      .then(qualifications => setQualifications(qualifications))
+      .catch(err => console.error(err))
   }, [])
 
   return (

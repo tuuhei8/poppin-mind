@@ -11,9 +11,9 @@ export default function Pricing() {
 
   useEffect(() => {
     pricesSrevice
-    .getAll()
-    .then(prices => setPrices(prices[0]))
-    .catch(err => console.error(err))
+      .getAll()
+      .then(prices => setPrices(prices[0]))
+      .catch(err => console.error(err))
   }, [])
 
   return (
