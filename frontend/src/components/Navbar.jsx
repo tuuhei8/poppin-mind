@@ -21,15 +21,6 @@ const labels = {
     toggle: 'Avaa valikko',
     lang: 'Kieli',
   },
-  sv: {
-    home: 'Hem',
-    about: 'Om',
-    services: 'Tjänster',
-    pricing: 'Priser',
-    contact: 'Kontakta oss',
-    toggle: 'Öppna meny',
-    lang: 'Språk',
-  },
 }
 
 export default function Navbar() {
@@ -37,7 +28,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const { language, setLanguage } = useLanguage()
-  const t = labels[language]
+  const t = labels[language] || labels.en
 
   useEffect(() => {
     setOpen(false)
@@ -75,13 +66,6 @@ export default function Navbar() {
               onClick={() => setLanguage('fi')}
             >
               FI
-            </button>
-            <button
-              type="button"
-              className={language === 'sv' ? 'language-toggle__button language-toggle__button--active' : 'language-toggle__button'}
-              onClick={() => setLanguage('sv')}
-            >
-              SV
             </button>
           </div>
 
