@@ -1,0 +1,8 @@
+GET http://localhost:3000/api/services/neuropsychiatric-coaching
+
+# Options (based on mongo documents as found in servicesDB-example.json in the root folder):
+
+# neuropsychiatric-coaching
+# solution-focused-coaching
+# solution-focused-brief-therapy
+# animal-assisted-coaching

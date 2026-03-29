@@ -13,13 +13,7 @@ const content = {
     title: 'Sivua ei löytynyt',
     subtitle: 'Etsimääsi sivua ei löytynyt tai se on voitu siirtää.',
     button: 'Takaisin etusivulle',
-  },
-  sv: {
-    tag: '404',
-    title: 'Sidan hittades inte',
-    subtitle: 'Sidan du letade efter finns inte eller kan ha flyttats.',
-    button: 'Till startsidan',
-  },
+  }
 }
 
 export default function NotFound() {

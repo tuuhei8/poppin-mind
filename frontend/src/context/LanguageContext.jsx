@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 const LanguageContext = createContext(null)
 
-const supportedLanguages = ['en', 'fi', 'sv']
+const supportedLanguages = ['en', 'fi']
 
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState(() => {

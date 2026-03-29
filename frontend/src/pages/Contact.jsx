@@ -15,18 +15,84 @@ export default function Contact() {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
   const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true) }
 
-  return (<>
-    <section className="page-hero"><div className="container"><span className="section-header__tag fade-in">{t.tag}</span><h1 className="page-hero__title fade-in fade-in-delay-1">{t.title}</h1><p className="page-hero__subtitle fade-in fade-in-delay-2">{t.subtitle}</p></div></section>
-    <section className="section"><div className="container"><div className="contact-grid">
-      <div className="fade-in fade-in-delay-1">{submitted ? <div className="trust-badge"><div className="trust-badge__icon">✅</div><h3>{t.successTitle}</h3><p>{t.successText}</p></div> : <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-group"><label htmlFor="name">{t.name}</label><input id="name" name="name" type="text" placeholder={t.namePh} value={form.name} onChange={handleChange} required /></div>
-        <div className="form-group"><label htmlFor="email">{t.email}</label><input id="email" name="email" type="email" placeholder={t.emailPh} value={form.email} onChange={handleChange} required /></div>
-        <div className="form-group"><label htmlFor="phone">{t.phone}</label><input id="phone" name="phone" type="tel" placeholder={t.phonePh} value={form.phone} onChange={handleChange} /></div>
-        <div className="form-group"><label htmlFor="service">{t.service}</label><select id="service" name="service" value={form.service} onChange={handleChange}><option value="">{t.select}</option>{t.options.map((option)=><option key={option} value={option}>{option}</option>)}</select></div>
-        <div className="form-group"><label htmlFor="message">{t.message}</label><textarea id="message" name="message" placeholder={t.messagePh} value={form.message} onChange={handleChange} required /></div>
-        <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>{t.send}</button>
-      </form>}</div>
-      <div className="contact-info fade-in fade-in-delay-2"><div className="trust-badge"><div className="trust-badge__icon">🔒</div><h3>{t.privacyTitle}</h3><p>{t.privacyText}</p></div><div className="contact-info__card"><h3>📧 Email</h3><p>info@poppinmind.com</p></div><div className="contact-info__card"><h3>{t.locationTitle}</h3><p>{t.locationText}</p></div><div className="contact-info__card"><h3>{t.responseTitle}</h3><p>{t.responseText}</p></div></div>
-    </div></div></section>
-  </>)
+  return (
+    <>
+      <section className="page-hero">
+        <div className="container">
+          <span className="section-header__tag fade-in">{t.tag}</span>
+          <h1 className="page-hero__title fade-in fade-in-delay-1">{t.title}</h1>
+          <p className="page-hero__subtitle fade-in fade-in-delay-2">{t.subtitle}</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="contact-grid">
+
+            <div className="fade-in fade-in-delay-1">
+              {submitted 
+                ? <div className="trust-badge">
+                    <div className="trust-badge__icon">
+                      ✅
+                    </div>
+                    <h3>{t.successTitle}</h3>
+                    <p>{t.successText}</p>
+                  </div>
+                : <form className="contact-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="name">{t.name}</label>
+                      <input id="name" name="name" type="text" placeholder={t.namePh} value={form.name} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">{t.email}</label>
+                      <input id="email" name="email" type="email" placeholder={t.emailPh} value={form.email} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="phone">{t.phone}</label>
+                      <input id="phone" name="phone" type="tel" placeholder={t.phonePh} value={form.phone} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="service">{t.service}</label>
+                      <select id="service" name="service" value={form.service} onChange={handleChange}>
+                        <option value="">{t.select}</option>
+                        {t.options.map((option) =>
+                          <option key={option} value={option}>{option}</option>)}
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="message">{t.message}</label>
+                      <textarea id="message" name="message" placeholder={t.messagePh} value={form.message} onChange={handleChange} required />
+                    </div>
+                    <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>{t.send}</button>
+                  </form>
+              }
+            </div>
+
+            <div className="contact-info fade-in fade-in-delay-2">
+              <div className="trust-badge">
+                <div className="trust-badge__icon">
+                  🔒
+                </div>
+                <h3>{t.privacyTitle}</h3>
+                <p>{t.privacyText}</p>
+              </div>
+              <div className="contact-info__card">
+                <h3>📧 Email</h3>
+                <p>info@poppinmind.com</p>
+              </div>
+              <div className="contact-info__card">
+                <h3>{t.locationTitle}</h3>
+                <p>{t.locationText}</p>
+              </div>
+              <div className="contact-info__card">
+                <h3>{t.responseTitle}</h3>
+                <p>{t.responseText}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }

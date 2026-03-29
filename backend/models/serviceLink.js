@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 
-
-const priceSchema = mongoose.Schema({
-  onlineSession: Object,
-  inPersonSession: Object,
-  introductoryCall: Object
+const serviceLinkSchema = mongoose.Schema({
+  path: String,
+  icon: String,
+  en: Object,
+  fi: Object
 })
 
-priceSchema.set('toJSON', {
+serviceLinkSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
@@ -15,4 +15,4 @@ priceSchema.set('toJSON', {
   }
 })
 
-module.exports = mongoose.model('Price', priceSchema)
+module.exports = mongoose.model('ServiceLink', serviceLinkSchema)

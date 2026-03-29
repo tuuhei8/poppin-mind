@@ -65,9 +65,31 @@ export default function About() {
   const { language } = useLanguage()
   const t = content[language]
   return (<>
-    <section className="page-hero"><div className="container"><span className="section-header__tag fade-in">{t.tag}</span><h1 className="page-hero__title fade-in fade-in-delay-1">{t.title}</h1><p className="page-hero__subtitle fade-in fade-in-delay-2">{t.subtitle}</p></div></section>
+    <section className="page-hero">
+      <div className="container">
+        <span className="section-header__tag fade-in">{t.tag}</span>
+        <h1 className="page-hero__title fade-in fade-in-delay-1">{t.title}</h1>
+        <p className="page-hero__subtitle fade-in fade-in-delay-2">{t.subtitle}</p>
+      </div>
+    </section>
+
     <section className="section"><div className="container"><div className="content-block"><div className="content-block__visual fade-in">🌿</div><div className="content-block__body fade-in fade-in-delay-1"><h2>{t.bgTitle}</h2><p>{t.bg1}</p><p>{t.bg2}</p></div></div></div></section>
     <section className="section section--alt"><div className="container"><div className="section-header text-center fade-in"><span className="section-header__tag">{t.qualTag}</span><h2 className="section-header__title">{t.qualTitle}</h2></div><div className="qualifications-list">{t.quals.map((q)=><div className="qualification-item fade-in" key={q[1]}><div className="qualification-item__icon">{q[0]}</div><div><h4>{q[1]}</h4><p>{q[2]}</p></div></div>)}</div></div></section>
-    <section className="section"><div className="container"><div className="content-block content-block--reverse"><div className="content-block__visual fade-in">☀️</div><div className="content-block__body fade-in fade-in-delay-1"><h2>{t.approachTitle}</h2><p>{t.approach1}</p><p>{t.approach2}</p><Link to="/contact" className="btn btn--primary" style={{ marginTop: '1rem' }}>{t.button}</Link></div></div></div></section>
+
+    <section className="section">
+      <div className="container">
+        <div className="content-block content-block--reverse">
+          <div className="content-block__visual fade-in">
+            ☀️
+          </div>
+          <div className="content-block__body fade-in fade-in-delay-1">
+            <h2>{t.approachTitle}</h2>
+            <p>{t.approach1}</p>
+            <p>{t.approach2}</p>
+            <Link to="/contact" className="btn btn--primary" style={{ marginTop: '1rem' }}>{t.button}</Link>
+          </div>
+        </div>
+      </div>
+    </section>
   </>)
 }

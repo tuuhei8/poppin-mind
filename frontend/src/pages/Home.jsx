@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
+import ServiceLinks from '../components/ServiceLinks'
 
 const content = {
   en: {
@@ -21,8 +22,13 @@ const content = {
     servicesTitle: 'Our Services',
     servicesDesc: 'Tailored approaches to meet you where you are.',
     services: [
-      ['🧠', 'Mental Coaching', 'Build mental resilience, develop focus, and cultivate a mindset that supports your goals.', '/services/mental-coaching'],
-      ['🎯', 'Solution-Focused Coaching', 'A future-oriented approach that helps you define goals and find practical steps forward.', '/services/solution-focused-coaching'],
+      [ '🧠', 'Mental Coaching',
+        'Build mental resilience, develop focus, and cultivate a mindset that supports your goals.',
+        '/services/mental-coaching'],
+      ['🎯',
+         'Solution-Focused Coaching',
+          'A future-oriented approach that helps you define goals and find practical steps forward.',
+           '/services/solution-focused-coaching'],
       ['💬', 'Solution-Focused Brief Therapy', 'Short-term therapeutic support designed to create meaningful change efficiently.', '/services/solution-focused-brief-therapy'],
       ['🐾', 'Animal-Assisted Coaching', 'Working alongside animals to promote emotional connection, presence, and insight.', '/services/animal-assisted-coaching'],
     ],
@@ -50,48 +56,22 @@ const content = {
     servicesTitle: 'Palvelumme',
     servicesDesc: 'Sinulle räätälöityjä lähestymistapoja juuri siitä kohdasta, jossa olet nyt.',
     services: [
-      ['🧠', 'Mental Coaching', 'Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.', '/services/mental-coaching'],
-      ['🎯', 'Ratkaisukeskeinen coaching', 'Tulevaisuuteen suuntautuva lähestymistapa, joka auttaa määrittämään tavoitteesi ja löytämään käytännölliset seuraavat askeleet.', '/services/solution-focused-coaching'],
-      ['💬', 'Ratkaisukeskeinen lyhytterapia', 'Lyhytkestoinen terapeuttinen tuki, jonka tavoitteena on aikaan saada merkityksellistä muutosta tehokkaasti.', '/services/solution-focused-brief-therapy'],
+      ['🧠', 'Mental Coaching', 
+        'Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.', '/services/mental-coaching'],
+      ['🎯', 'Ratkaisukeskeinen coaching', 
+        'Tulevaisuuteen suuntautuva lähestymistapa, joka auttaa määrittämään tavoitteesi ja löytämään käytännölliset seuraavat askeleet.', '/services/solution-focused-coaching'],
+      ['💬', 'Ratkaisukeskeinen lyhytterapia', 
+        'Lyhytkestoinen terapeuttinen tuki, jonka tavoitteena on aikaan saada merkityksellistä muutosta tehokkaasti.', '/services/solution-focused-brief-therapy'],
       ['🐾', 'Eläinavusteinen coaching', 'Työskentely eläinten kanssa voi lisätä tunnetason yhteyttä, läsnäoloa ja oivalluksia.', '/services/animal-assisted-coaching'],
     ],
     learn: 'Lue lisää →',
     ctaTitle: 'Valmis ottamaan ensimmäisen askeleen?',
     ctaText: 'Yhteydenotto on usein vaikein osa. Olemme täällä tekemässä siitä helppoa ja turvallista. Keskustellaan.',
     ctaButton: 'Ota yhteyttä',
-  },
-  sv: {
-    tag: 'Coaching & korttidsterapi',
-    title: 'En trygg plats för utveckling, klarhet och förändring',
-    subtitle:
-      'Poppin Mind erbjuder professionell coaching och lösningsfokuserad korttidsterapi. Tillsammans utforskar vi dina styrkor och bygger vägar mot det liv du vill leva — i din egen takt.',
-    primary: 'Boka en tid',
-    secondary: 'Utforska tjänster',
-    whyTag: 'Varför Poppin Mind',
-    whyTitle: 'En trygg grund för din resa',
-    whyDesc: 'Varje människa bär på unika styrkor. Vår roll är att hjälpa dig att hitta dem igen.',
-    values: [
-      ['🤝', 'Tillit och konfidentialitet', 'Allt som delas i våra samtal förblir strikt konfidentiellt. Din integritet och känsla av trygghet är vår högsta prioritet.'],
-      ['🌱', 'Styrkebaserat', 'I stället för att fokusera på problem bygger vi vidare på det som redan fungerar i ditt liv för att skapa positiv och hållbar förändring.'],
-      ['💛', 'Varmt och professionellt', 'En kombination av akademisk expertis och genuin värme skapar ett rum där du kan känna dig både stöttad och stärkt.'],
-    ],
-    servicesTag: 'Vad vi erbjuder',
-    servicesTitle: 'Våra tjänster',
-    servicesDesc: 'Anpassade arbetssätt som möter dig där du är.',
-    services: [
-      ['🧠', 'Mental coaching', 'Bygg mental motståndskraft, utveckla fokus och odla ett tankesätt som stödjer dina mål.', '/services/mental-coaching'],
-      ['🎯', 'Lösningsfokuserad coaching', 'Ett framtidsinriktat arbetssätt som hjälper dig att definiera mål och hitta praktiska steg framåt.', '/services/solution-focused-coaching'],
-      ['💬', 'Lösningsfokuserad korttidsterapi', 'Kortvarigt terapeutiskt stöd som är utformat för att skapa meningsfull förändring på ett effektivt sätt.', '/services/solution-focused-brief-therapy'],
-      ['🐾', 'Djurassisterad coaching', 'Att arbeta tillsammans med djur kan främja känslomässig kontakt, närvaro och insikt.', '/services/animal-assisted-coaching'],
-    ],
-    learn: 'Läs mer →',
-    ctaTitle: 'Redo att ta första steget?',
-    ctaText: 'Att höra av sig är ofta den svåraste delen. Vi finns här för att göra det enkelt och tryggt. Låt oss prata.',
-    ctaButton: 'Kontakta oss',
-  },
+  }
 }
 
-export default function Home() {
+export default function Home({ serviceLinks }) {
   const { language } = useLanguage()
   const t = content[language]
 
@@ -138,17 +118,7 @@ export default function Home() {
             <h2 className="section-header__title">{t.servicesTitle}</h2>
             <p className="section-header__desc" style={{ margin: '0 auto' }}>{t.servicesDesc}</p>
           </div>
-
-          <div className="services-grid">
-            {t.services.map(([icon, title, desc, link]) => (
-              <Link to={link} key={title} className="service-card fade-in">
-                <div className="service-card__icon">{icon}</div>
-                <h3 className="service-card__title">{title}</h3>
-                <p className="service-card__text">{desc}</p>
-                <span className="service-card__link">{t.learn}</span>
-              </Link>
-            ))}
-          </div>
+          <ServiceLinks serviceLinks={serviceLinks} learn={t.learn} />
         </div>
       </section>
 

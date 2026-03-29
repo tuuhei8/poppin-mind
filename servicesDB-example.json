@@ -1,0 +1,358 @@
+{ "serviceLinks": [
+    {
+      "path": "neuropsychiatric-coaching",
+      "icon": "🧠",
+      "en": {
+        "title": "Neuropsychiatric coaching",
+        "summary": "Build mental resilience, develop focus, and cultivate a mindset that supports your goals."
+      },
+      "fi": {
+        "title": "Neuropsykiatrinen valmennus",
+        "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
+      }
+    },
+  
+    {
+      "path": "solution-focused-coaching",
+      "icon": "🎯",
+      "en": {
+        "title": "Solution-Focused Coaching",
+        "summary": "A future-oriented approach that helps you define goals and find practical steps forward."
+      },
+      "fi": {
+        "title": "Ratkaisukeskeinen valmennus",
+        "summary": "Tulevaisuuteen suuntautuva lähestymistapa, joka auttaa määrittämään tavoitteesi ja löytämään käytännölliset seuraavat askeleet."
+      }
+    },
+  
+    {
+      "path": "solution-focused-brief-therapy",
+      "icon": "💬",
+      "en": {
+        "title": "Solution-Focused Brief Therapy",
+        "summary": "A structured, short-term therapeutic approach that helps you create meaningful change in a focused timeframe."
+      },
+      "fi": {
+        "title": "Ratkaisukeskeinen lyhytterapia",
+        "summary": "Jäsennelty, lyhytkestoinen terapeuttinen lähestymistapa, joka auttaa aikaansaamaan merkityksellistä muutosta."
+      }
+    },
+  
+    {
+      "path": "animal-assisted-coaching",
+      "icon": "🐾",
+      "en": {
+        "title": "Animal-Assisted Coaching",
+        "summary": "Working alongside animals to promote emotional connection, presence, and insight."
+      },
+      "fi": {
+        "title": "Eläinavusteinen valmennus",
+        "summary": "Työskentely eläinten kanssa voi lisätä tunnetason yhteyttä, läsnäoloa ja oivalluksia."
+      }
+    }
+  ],
+
+
+
+  "services": [
+    
+    { 
+      "path": "neuropsychiatric-coaching",
+      "en": {
+        "tag": "Service",
+        "title": "Neuropsychiatric coaching",
+        "subtitle":"Build resilience, confidence, and mental clarity through a supportive and goal-oriented process.",
+        "what": {
+          "icon": "🧠",
+          "title": "What is neuropsychiatric coaching?",
+          "p1": "Neuropsychiatric coaching helps you strengthen the mindset and habits that support performance, wellbeing, and everyday life. It can help with confidence, motivation, focus, and emotional resilience.",
+          "p2": "Sessions are practical, reflective, and tailored to you. Together, we identify what is getting in your way and what will move you forward.",
+          "list": []
+        },
+        "how": {
+          "icon": "⚡",
+          "title": "What can it help with?",
+          "p1": "",
+          "p2": "",
+          "list": [
+            "Building confidence and self-belief",
+            "Managing stress and pressure",
+            "Improving focus and motivation",
+            "Strengthening emotional resilience",
+            "Preparing for change or challenges"
+            ]
+        },
+        "who": {
+          "icon": "🌟",
+          "title": "Who is it for?",
+          "p1": "Neuropsychiatric coaching is for anyone who wants support in developing their inner resources. Whether you are facing a demanding season, striving toward a goal, or simply wanting to feel stronger and clearer, this approach can help.",
+          "p2": "It is suitable for individuals, students, professionals, and anyone seeking practical, supportive growth.",
+          "list": []
+        },
+        "contactBannerTitle": "Ready to strengthen your mindset?",
+        "contactBannerText": "Let us talk about what support would be most helpful for you.",
+        "contactBannerButton": "Book a Session"
+      },
+      "fi": {
+        "tag": "Palvelu",
+        "title": "Neuropsykiatrinen valmennus",
+        "summaryForLink": "Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.",
+        "what": {
+          "icon": "🧠",
+          "title": "Mitä nepsy-valmennus on?",
+          "p1": "Nepsy-valmennus auttaa vahvistamaan ajattelutapaa ja tapoja, jotka tukevat suorituskykyä, hyvinvointia ja arkea. Se voi auttaa esimerkiksi itseluottamuksen, motivaation, keskittymisen ja tunne-elämän resilienssin kehittämisessä.",
+          "p2": "Tapaamiset ovat käytännöllisiä, reflektoivia ja juuri sinulle räätälöityjä. Yhdessä tunnistamme, mikä estää etenemistäsi ja mikä vie sinua eteenpäin.",
+          "list": []
+        },
+        "how": {
+          "icon": "⚡",
+          "title": "Missä se voi auttaa?",
+          "p1": "",
+          "p2": "",
+          "list": [
+            "Itseluottamuksen vahvistaminen",
+            "Stressin ja paineen hallinta",
+            "Keskittymisen ja motivaation kehittäminen",
+            "Tunne-elämän resilienssin vahvistaminen",
+            "Valmistautuminen muutoksiin tai haasteisiin"
+          ]
+        },
+        "who": {
+          "icon": "🌟",
+          "title": "Kenelle se sopii?",
+          "p1":"Nepsy-valmennus sopii kaikille, jotka haluavat kehittää sisäisiä voimavarojaan. Olitpa vaativassa elämäntilanteessa, etenemässä kohti tavoitetta tai haluamassa lisää selkeyttä ja vahvuutta, tästä voi olla hyötyä.",
+          "p2": "Se sopii yksilöille, opiskelijoille, ammattilaisille ja kaikille, jotka kaipaavat käytännöllistä ja kannattelevaa kasvua.",
+          "list": []
+        },
+        "contactBannerTitle": "Haluatko vahvistaa ajattelutapaasi?",
+        "contactBannerText": "Keskustellaan siitä, millainen tuki olisi sinulle hyödyllisintä.",
+        "contactBannerButton": "Varaa aika"
+      }
+    },
+  
+    {
+      "path": "solution-focused-coaching", 
+      "en": {
+        "tag": "Service",
+        "title": "Solution-Focused Coaching",
+        "subtitle":"A forward-looking approach that helps you identify what you want and find the most direct path to get there.",
+        "what": {
+          "icon": "🎯",
+          "title": "What is solution-focused coaching",
+          "p1": "Solution-focused coaching is built on a simple but powerful idea: instead of analysing problems in depth, we direct our energy toward envisioning and building the future you want",
+          "p2": "This approach recognises that you are the expert on your own life. Through carefully crafted questions and reflections, we uncover the strengths and resources you already have — and put them to work.",
+          "list": []
+        },
+        "how": {
+          "icon": "🗝️",
+          "title": "How does it work?",
+          "p1": "",
+          "p2": "",
+          "list": [
+            "Define clear, meaningful goals",
+            "Recognise what is already working",
+            "Scale progress and celebrate small wins",
+            "Build momentum through practical action steps",
+            "Develop self-reliance and inner confidence"
+          ]
+        },
+        "who": {
+          "icon": "🌟",
+          "title": "Who benefits from this approach?",
+          "p1": "This is ideal for people who feel stuck but want to move forward, who are navigating transitions, or who want support in reaching a specific goal.",
+          "p2": "It is well suited for anyone who prefers a positive, practical approach rather than spending a long time exploring past difficulties.",
+          "list": []
+        },
+        "contactBannerTitle": "Start focusing on solutions",
+        "contactBannerText": "Your next chapter begins with a single conversation.",
+        "contactBannerButton": "Get in Touch"
+      },
+      "fi": {
+        "tag": "Palvelu",
+        "title": "Ratkaisukeskeinen valmennus",
+        "subtitle": "Tulevaisuuteen suuntautuva lähestymistapa, joka auttaa tunnistamaan mitä haluat ja löytämään suoran reitin sitä kohti.",
+        "what": {
+          "icon": "🎯",
+          "title": "Mitä ratkaisukeskeinen valmennus on?",
+          "p1": "Ratkaisukeskeinen valmennus perustuu yksinkertaiseen mutta voimakkaaseen ajatukseen: ongelmien pitkän analysoinnin sijaan suuntaamme energian siihen, millaista tulevaisuutta haluat rakentaa.",
+          "p2": "Lähestymistapa tunnistaa, että olet oman elämäsi paras asiantuntija. Tarkkojen kysymysten ja reflektion avulla löydämme vahvuudet ja voimavarat, jotka sinulla jo on — ja otamme ne käyttöön.",
+          "list": []
+        },
+        "how": {
+          "icon": "🗝️",
+          "title": "Miten se toimii?",
+          "p1": "",
+          "p2": "",
+          "list": [
+            "Määritellään selkeät ja merkitykselliset tavoitteet",
+            "Tunnistetaan mikä toimii jo nyt",
+            "Seurataan edistymistä ja huomataan pienet onnistumiset",
+            "Rakennetaan etenemistä konkreettisilla askelilla",
+            "Vahvistetaan omatoimisuutta ja sisäistä luottamusta"
+          ]
+        },
+        "who": {
+          "icon": "🌟",
+          "title": "Kenelle tämä sopii?",
+          "p1":"Tämä sopii erityisesti ihmisille, jotka kokevat olevansa jumissa mutta haluavat löytää tavan käsitellä asiaa. Ratkaisukeskeinen ajattelu sopii myös niille jotka käyvät läpi muutoksia tai tarvitsevat tukea tietyn tavoitteen saavuttamiseen.",
+          "p2": "Se sopii hyvin myös niille, jotka arvostavat myönteistä ja käytännöllistä lähestymistapaa menneisyyden pitkän läpikäymisen sijaan.",
+          "list": []
+        },
+        "contactBannerTitle": "Aloita ratkaisuihin suuntaaminen",
+        "contactBannerText": "Seuraava lukusi voi alkaa yhdestä keskustelusta.",
+        "contactBannerButton": "Ota yhteyttä"
+      }
+    },
+
+    {
+      "path": "solution-focused-brief-therapy", 
+      "en": {
+        "tag": "Service",
+        "title": "Solution-Focused Brief Therapy",
+        "subtitle":"Short-term therapeutic support centred on strengths, goals, and meaningful change.",
+        "what": {
+          "icon": "💬",
+          "title": "What is solution-focused brief therapy?",
+          "p1": "Solution-Focused Brief Therapy is an evidence-based therapeutic approach that concentrates on solutions rather than problems. It is designed to help you move forward efficiently while respecting your strengths and autonomy.",
+          "p2": "Most courses of therapy involve only a few sessions. The focus stays on what you want to be different and what steps will help you get there.",
+          "list": []
+        },
+        "how": {
+          "icon": "🌈",
+          "title": "How is it different from solution-focused coaching?",
+          "p1": "While coaching focuses on growth and goals, brief therapy is better suited when emotional distress or deeper psychological challenges are part of the picture.",
+          "p2": "",
+          "list": [
+            "Evidence-based framework",
+            "Focuses on what you want, not what went wrong",
+            "Often works within 3–8 sessions",
+            "Suitable for a wide range of concerns",
+            "Empowering and respectful"
+          ]
+        },
+        "who": {
+          "icon": "🛡️",
+          "title": "Is it right for me?",
+          "p1": "This can help with anxiety, low mood, relationship difficulties, grief, stress, and life transitions. If you want professional support without committing to years of therapy, it may be a good fit.",
+          "p2": "If you are unsure whether coaching or therapy would suit you better, we can discuss that together in an introductory conversation.",
+          "list": []
+        },
+        "contactBannerTitle": "Change does not have to take forever",
+        "contactBannerText": "A few focused sessions can make a real difference.",
+        "contactBannerButton": "Book a Session"
+      },
+      "fi": {
+        "tag": "Palvelu",
+        "title": "Ratkaisukeskeinen lyhytterapia",
+        "subtitle": "Lyhytkestoista terapeuttista tukea, jonka keskiössä ovat vahvuudet, tavoitteet ja merkityksellinen muutos.",
+        "what": {
+          "icon": "💬",
+          "title": "Mitä ratkaisukeskeinen lyhytterapia on?",
+          "p1": "Ratkaisukeskeinen lyhytterapia on näyttöön perustuva terapeuttinen lähestymistapa, joka keskittyy ratkaisuihin ongelmien sijaan. Sen tavoitteena on auttaa sinua etenemään tehokkaasti vahvuuksiasi ja autonomiaasi kunnioittaen.",
+          "p2": "Usein terapiaprosessi koostuu vain muutamasta tapaamisesta. Huomio pidetään siinä, mitä haluat elämässäsi muuttuvan ja mitkä askeleet vievät sinua siihen suuntaan.",
+          "list": []
+        },
+        "how": {
+          "icon": "🌈",
+          "title": "Miten se eroaa ratkaisukeskeisestä valmennuksesta?",
+          "p1": "Valmennus painottuu kasvuun ja tavoitteisiin, kun taas lyhytterapia sopii paremmin tilanteisiin, joissa mukana on kuormitusta, tunnehaasteita tai syvempiä psykologisia teemoja.",
+          "p2": "",
+          "list": [
+            "Näyttöön perustuva viitekehys",
+            "Keskittyy siihen mitä haluat, ei siihen mikä meni pieleen",
+            "Usein 3–8 tapaamista",
+            "Sopii monenlaisiin elämäntilanteisiin",
+            "Voimaannuttava ja kunnioittava"
+          ]
+        },
+        "who": {
+          "icon": "🛡️",
+          "title": "Sopiiko tämä minulle?",
+          "p1":"Tämä voi auttaa esimerkiksi ahdistuksessa, alakuloisuudessa, ihmissuhdehaasteissa, surussa, stressissä ja elämänmuutoksissa. Jos haluat ammatillista tukea ilman vuosien terapiaprosessia, tämä voi olla hyvä vaihtoehto.",
+          "p2": "",
+          "list": []
+        },
+        "contactBannerTitle": "Muutoksen ei tarvitse kestää ikuisesti",
+        "contactBannerText": "Muutama fokusoitu tapaaminen voi tehdä todellisen eron.",
+        "contactBannerButton": "Varaa aika"
+      }
+    },
+    
+    
+    
+    {
+      "path": "animal-assisted-coaching",
+      "en": {
+        "tag": "Service",
+        "title": "Animal-Assisted Coaching",
+        "subtitle":"Experience the unique power of working alongside animals to foster emotional awareness, presence, and personal growth.",
+        "what": {
+          "icon": "🐾",
+          "title": "What is animal-assisted coaching?",
+          "p1": "Animal-assisted coaching integrates the presence of trained animals into the coaching process. Animals can create a safe, grounding atmosphere and help bring emotions and patterns into awareness.",
+          "p2": "Working with animals can lower stress, increase emotional awareness, and offer fresh perspectives on how you relate to yourself and others.",
+          "list": []
+        },
+        "how": {
+          "icon": "🌿",
+          "title": "How does it work?",
+          "p1": "During a session, you interact with animals in structured activities guided by your coach. These moments can reveal insights that do not always surface in a traditional conversation.",
+          "p2": "",
+          "list": [
+            "Builds emotional regulation and awareness",
+            "Encourages presence and mindfulness",
+            "Reveals relational patterns through non-verbal interaction",
+            "Reduces anxiety and creates a calming environment",
+            "Accessible for different ages and backgrounds"
+          ]
+        },
+        "who": {
+          "icon": "❤️",
+          "title": "Who is it for?",
+          "p1": "This approach can be especially helpful for people who find traditional talk-based methods challenging, for children and young people, or for anyone who feels a natural connection with animals.",
+          "p2": "It can also complement other coaching or therapeutic approaches for a more holistic experience.",
+          "list": []
+        },
+        "contactBannerTitle": "Curious about animal-assisted coaching?",
+        "contactBannerText": "Let us talk about how this unique approach could work for you.",
+        "contactBannerButton": "Get in Touch"
+      },
+      "fi": {
+        "tag": "Palvelu",
+        "title": "Eläinavusteinen valmennus",
+        "subtitle": "Koe eläinten kanssa työskentelyn ainutlaatuinen voima tunnetietoisuuden, läsnäolon ja henkilökohtaisen kasvun tukena.",
+        "what": {
+          "icon": "🐾",
+          "title": "Mitä eläinavusteinen valmennus on?",
+          "p1": "Eläinavusteinen valmennus tuo koulutettujen eläinten läsnäolon osaksi valmennusprosessia. Eläimet voivat luoda turvallisen ja maadoittavan ilmapiirin sekä auttaa tunteiden ja toimintamallien tunnistamisessa.",
+          "p2": "Työskentely eläinten kanssa voi laskea stressiä, lisätä tunnetietoisuutta ja tarjota uusia näkökulmia siihen, miten suhtaudut itseesi ja muihin.",
+          "list": []
+        },
+        "how": {
+          "icon": "🌿",
+          "title": "Miten se toimii?",
+          "p1": "Tapaamisen aikana olet vuorovaikutuksessa eläinten kanssa valmentajan ohjaamissa rakenteellisissa harjoituksissa. Ne voivat tuoda esiin oivalluksia, joita tavallinen keskustelu ei aina tavoita.",
+          "p2": "",
+          "list": [
+            "Vahvistaa tunnesäätelyä ja tunnetietoisuutta",
+            "Kannustaa läsnäoloon ja mindfulnessiin",
+            "Paljastaa vuorovaikutusmalleja sanattoman kontaktin kautta",
+            "Vähentää ahdistusta ja luo rauhoittavan ympäristön",
+            "Sopii eri-ikäisille ja erilaisista taustoista tuleville"
+          ]
+        },
+        "who": {
+          "icon": "❤️",
+          "title": "Kenelle se sopii?",
+          "p1": "Lähestymistapa voi olla erityisen hyödyllinen ihmisille, joille pelkkään keskusteluun perustuvat menetelmät ovat haastavia, lapsille ja nuorille sekä kaikille, joilla on luonteva yhteys eläimiin.",
+          "p2": "Sitä voidaan myös yhdistää muihin coaching- tai terapiamuotoihin kokonaisvaltaisemman kokemuksen luomiseksi.",
+          "list": []
+        },
+        "contactBannerTitle": "Kiinnostaako eläinavusteinen coaching?",
+        "contactBannerText": "Keskustellaan siitä, voisiko tämä ainutlaatuinen lähestymistapa sopia sinulle.",
+        "contactBannerButton": "Ota yhteyttä"
+      }
+    }
+  ]
+}
+    

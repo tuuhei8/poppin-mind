@@ -7,6 +7,7 @@ const middleware = require('./utils/middleware')
 const servicesRouter = require('./controllers/services')
 const pricesRouter = require('./controllers/prices')
 const qualificationsRouter = require('./controllers/qualifications')
+const serviceLinksRouter = require('./controllers/serviceLinks')
 
 const app = express()
 
@@ -20,10 +21,17 @@ mongoose.connect(config.MONGODB_URI)
     logger.error('error connecting to MongoDB:', error.message)
   })
 
-//app.use(express.static('dist'))
+/*app.use(express.static('dist'))
+app.use('/:path', express.static('dist'))
+app.use('/services', express.static('dist'))
+app.use('/services/:path', express.static('dist'))
+app.use('/about', express.static('dist'))
+app.use('/pricing', express.static('dist'))
+app.use('/contact', express.static('dist'))*/
 app.use(morgan('tiny'))
 
 app.use('/api/services', servicesRouter)
+app.use('/api/serviceLinks', serviceLinksRouter)
 app.use('/api/prices', pricesRouter)
 app.use('/api/qualifications', qualificationsRouter)
 

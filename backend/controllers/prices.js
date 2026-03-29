@@ -11,13 +11,4 @@ pricesRouter.get('/', async (request, response, next) => {
   }
 })
 
-pricesRouter.get('/:id', async (request, response, next) => {
-  try {
-    const price = await Price.findById(request.params.id)
-    response.json(price)
-  } catch (exception) {
-    next(exception)
-  }
-})
-
 module.exports = pricesRouter

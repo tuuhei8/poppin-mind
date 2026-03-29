@@ -11,13 +11,4 @@ qualificationsRouter.get('/', async (request, response, next) => {
   }
 })
 
-qualificationsRouter.get('/:id', async (request, response, next) => {
-  try {
-    const qualification = await Qualification.findById(request.params.id)
-    response.json(qualification)
-  } catch (exception) {
-    next(exception)
-  }
-})
-
 module.exports = qualificationsRouter
