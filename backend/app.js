@@ -25,11 +25,11 @@ app.use(express.static('dist'))
 
 app.use([
   '/services',
-  '/services/:path',
   '/about',
   '/pricing',
   '/contact'], express.static('dist'))
 
+app.use('/services/:path', express.static('dist'))
 app.use('/:path', express.static('dist'))
 
 app.use(morgan('tiny'))
