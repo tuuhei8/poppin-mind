@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import ContactBanner from '../components/ContactBanner'
 import ServiceLinks from '../components/ServiceLinks'
+import PageHero from '../components/PageHero'
 
 const content = {
   en: {
@@ -44,13 +45,7 @@ export default function Services({ serviceLinks }) {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <span className="section-header__tag fade-in">{t.heroTag}</span>
-          <h1 className="page-hero__title fade-in fade-in-delay-1">{t.heroTitle}</h1>
-          <p className="page-hero__subtitle fade-in fade-in-delay-2">{t.heroSubtitle}</p>
-        </div>
-      </section>
+      <PageHero tag={t.heroTag} title={t.heroTitle} subtitle={t.heroSubtitle} />
 
       <section className="section">
         <div className="container">

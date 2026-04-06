@@ -1,4 +1,4 @@
-/*import axios from 'axios'
+import axios from 'axios'
 const baseUrl = '/api/prices'
 
 const getAll = () => {
@@ -6,4 +6,4 @@ const getAll = () => {
   return request.then(response => response.data)
 }
 
-export default { getAll }*/
+export default { getAll }

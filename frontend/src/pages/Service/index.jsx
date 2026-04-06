@@ -6,6 +6,7 @@ import NotFound from '../NotFound'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import servicesService from '../../services/services'
+import PageHero from '../../components/PageHero'
 
 export default function Service() {
   const { language } = useLanguage()
@@ -32,13 +33,7 @@ export default function Service() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <span className="section-header__tag fade-in">{service.tag}</span>
-          <h1 className="page-hero__title fade-in fade-in-delay-1">{service.title}</h1>
-          <p className="page-hero__subtitle fade-in fade-in-delay-2">{service.subtitle}</p>
-        </div>
-      </section>
+      <PageHero tag={service.tag} title={service.title} subtitle={service.subtitle} />
 
       <ContentBlock content={service.what} />
       <ContentBlockReverse content={service.how} />

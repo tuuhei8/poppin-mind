@@ -15,9 +15,21 @@ In the app.js file the express.static('dist') statements are, for the time being
 
 ### Documents, database structure and connections with the frontend
 
-The App.jsx gets the information for links in the Home.jsx and Services.jsx pages from a mongo collection named 'servicelinks', at /api/serviceLinks. When one of the links is used a parameterized route is used to open a component folder named Service.The useEffect block in the Service component's index.jsx checks the path parameter of the URL and gets the matching service's details based on the "path" field, which should be identical in the matching service and servicelink documents.
+---
 
-Ready-made examples for the new 'servicelinks' and 'services' document collections can be found at the root folder within servicesDB-example.json file.
+#### Servicelinks and Services
+
+The App.jsx gets the information for links in the Home.jsx and Services.jsx pages from a mongo collection named 'servicelinks', at /api/serviceLinks. When one of the links is used a parameterized route is used to open the component in a folder named Service. The useEffect block in the Service folder's index.jsx checks the path parameter of the URL and gets the matching service's details based on the "path" field, which should be identical in the matching service and servicelink documents.
+
+Ready-made examples for the 'servicelinks' and 'services' document collections can be found at the root folder within services-example.json file.
+
+#### Pricing
+
+Prices-example.json contains an example collection of documents for pricing plans. The collection should be named 'prices' in mongo database.
+
+#### Qualifications
+
+Qualifications-example.json contains an example collection of documents for qualifications. The collection should be named 'qualifications' in mongo database.
 
 ## Endpoints
 

@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
+import { useState, useEffect } from 'react'
+import qualificationsService from '../services/qualifications'
+import PageHero from '../components/PageHero'
 
 const content = {
   en: {
@@ -9,12 +12,35 @@ const content = {
     bg2: 'Holding two master\'s degrees, they combine scholarly knowledge with practical, empathetic coaching methods. This blend ensures that every session is both grounded in evidence and shaped by genuine human connection.',
     qualTag: 'Qualifications', qualTitle: 'Training & Expertise',
     quals: [
-      ['🎓','Two Master\'s Degrees','Advanced academic training providing a strong theoretical and practical foundation.'],
-      ['📚','Psychology Teaching','Experience teaching psychology, deepening expertise in human behaviour and cognition.'],
-      ['🤲','Special Education','Work in special education, building skills in adaptive, empathetic support.'],
-      ['🧠','Mental Coaching Certification','Qualified mental coach with training in resilience, focus, and mindset development.'],
-      ['🎯','Solution-Focused Methods','Trained in solution-focused coaching and brief therapy approaches.'],
-      ['🐾','Animal-Assisted Interventions','Qualified to integrate animals into coaching sessions for deeper engagement.'],
+      [
+        '🎓',
+        'Two Master\'s Degrees',
+        'Advanced academic training providing a strong theoretical and practical foundation.'
+      ],
+      [
+        '📚',
+        'Psychology Teaching',
+        'Experience teaching psychology, deepening expertise in human behaviour and cognition.'
+      ],
+      [
+        '🤲',
+        'Special Education',
+        'Work in special education, building skills in adaptive, empathetic support.'],
+      [
+        '🧠',
+        'Neuropsychiatric Coaching Certification',
+        'Qualified neuropsychiatric coach with training in resilience, focus, and mindset development.'
+      ],
+      [
+        '🎯',
+        'Solution-Focused Methods',
+        'Trained in solution-focused coaching and brief therapy approaches.'
+      ],
+      [
+        '🐾',
+        'Animal-Assisted Interventions',
+        'Qualified to integrate animals into coaching sessions for deeper engagement.'
+      ],
     ],
     approachTitle: 'My approach',
     approach1: 'I believe that every person already holds the resources they need. My role is to create a warm, safe space where you can access those resources and build on them.',
@@ -28,68 +54,118 @@ const content = {
     bg2: 'Kaksi maisteritutkintoa yhdistyvät käytännöllisiin ja empaattisiin coaching-menetelmiin. Tämä yhdistelmä varmistaa, että jokainen tapaaminen on sekä tutkittuun tietoon pohjautuva että aidosti inhimillinen.',
     qualTag: 'Koulutus', qualTitle: 'Osaaminen ja pätevyys',
     quals: [
-      ['🎓','Kaksi maisteritutkintoa','Laaja akateeminen koulutus, joka luo vahvan teoreettisen ja käytännöllisen perustan.'],
-      ['📚','Psykologian opetus','Kokemus psykologian opettamisesta on syventänyt ymmärrystä ihmisen käyttäytymisestä ja ajattelusta.'],
-      ['🤲','Erityisopetus','Työ erityisopetuksessa on vahvistanut mukautuvaa ja empaattista tukiosaamista.'],
-      ['🧠','Mental Coaching -sertifiointi','Koulutettu mental coach, jonka osaamiseen kuuluu resilienssi, keskittyminen ja ajattelutavan kehittäminen.'],
-      ['🎯','Ratkaisukeskeiset menetelmät','Koulutus ratkaisukeskeisen coachingin ja lyhytterapian menetelmiin.'],
-      ['🐾','Eläinavusteiset menetelmät','Pätevyys hyödyntää eläimiä coachingissa syvemmän kontaktin ja oivallusten tukena.'],
+      [
+        '🎓',
+        'Kaksi maisteritutkintoa',
+        'Laaja akateeminen koulutus, joka luo vahvan teoreettisen ja käytännöllisen perustan.'
+      ],
+      [
+        '📚',
+        'Psykologian opetus',
+        'Kokemus psykologian opettamisesta on syventänyt ymmärrystä ihmisen käyttäytymisestä ja ajattelusta.'
+      ],
+      [
+        '🤲',
+        'Erityisopetus',
+        'Työ erityisopetuksessa on vahvistanut mukautuvaa ja empaattista tukiosaamista.'
+      ],
+      [
+        '🧠',
+        'Neuropsykiatrinen valmennus -sertifiointi',
+        'Koulutettu nepsy-valmentaja, jonka osaamiseen kuuluu resilienssi, keskittyminen ja ajattelutavan kehittäminen.'
+      ],
+      [
+        '🎯',
+        'Ratkaisukeskeiset menetelmät',
+        'Koulutus ratkaisukeskeisen coachingin ja lyhytterapian menetelmiin.'
+      ],
+      [
+        '🐾',
+        'Eläinavusteiset menetelmät',
+        'Pätevyys hyödyntää eläimiä coachingissa syvemmän kontaktin ja oivallusten tukena.'
+      ],
     ],
     approachTitle: 'Lähestymistapani',
     approach1: 'Uskon, että jokaisella ihmisellä on jo itsessään ne voimavarat, joita hän tarvitsee. Minun roolini on luoda lämmin ja turvallinen tila, jossa pääset niiden äärelle ja voit vahvistaa niitä.',
     approach2: 'Olitpa elämäntilanteen muutoksessa, hakemassa suuntaa tavoitteillesi tai työstämässä haasteita, kohtaan sinut juuri siinä missä olet — ilman arvostelua, täysin luottamuksellisesti ja aidosti hyvinvointiasi tukien.',
     button: 'Keskustellaan',
-  },
-  sv: {
-    tag: 'Om', title: 'Personen bakom Poppin Mind', subtitle: 'En grund av akademisk expertis, praktisk erfarenhet och genuin omsorg om varje individ.',
-    bgTitle: 'En bakgrund förankrad i förståelse för människor',
-    bg1: 'Grundaren av Poppin Mind har en stark akademisk och professionell bakgrund inom psykologi och utbildning. Erfarenhet av att undervisa i psykologi och arbeta inom specialpedagogik har skapat en djup förståelse för hur människor tänker, lär sig och utvecklas.',
-    bg2: 'Med två magisterexamina kombineras vetenskaplig kunskap med praktiska och empatiska coachingmetoder. Denna kombination gör att varje session både vilar på evidens och präglas av äkta mänsklig kontakt.',
-    qualTag: 'Kvalifikationer', qualTitle: 'Utbildning och expertis',
-    quals: [
-      ['🎓','Två magisterexamina','Avancerad akademisk utbildning som ger en stark teoretisk och praktisk grund.'],
-      ['📚','Undervisning i psykologi','Erfarenhet av att undervisa i psykologi har fördjupat expertisen kring mänskligt beteende och tänkande.'],
-      ['🤲','Specialpedagogik','Arbete inom specialpedagogik har utvecklat färdigheter i anpassat och empatiskt stöd.'],
-      ['🧠','Certifiering i mental coaching','Utbildad mental coach med fokus på resiliens, koncentration och mindset.'],
-      ['🎯','Lösningsfokuserade metoder','Utbildning inom lösningsfokuserad coaching och korttidsterapi.'],
-      ['🐾','Djurassisterade insatser','Kvalificerad att integrera djur i coaching för djupare engagemang.'],
-    ],
-    approachTitle: 'Mitt arbetssätt',
-    approach1: 'Jag tror att varje människa redan bär på de resurser som behövs. Min roll är att skapa ett varmt och tryggt rum där du kan få kontakt med dem och bygga vidare på dem.',
-    approach2: 'Oavsett om du står inför en livsförändring, söker klarhet kring dina mål eller arbetar med utmaningar möter jag dig där du är — utan att döma, med full konfidentialitet och med genuin omsorg om ditt välmående.',
-    button: 'Låt oss prata',
-  },
+  }
 }
 
 export default function About() {
   const { language } = useLanguage()
   const t = content[language]
-  return (<>
-    <section className="page-hero">
-      <div className="container">
-        <span className="section-header__tag fade-in">{t.tag}</span>
-        <h1 className="page-hero__title fade-in fade-in-delay-1">{t.title}</h1>
-        <p className="page-hero__subtitle fade-in fade-in-delay-2">{t.subtitle}</p>
-      </div>
-    </section>
+  const [qualifications, setQualifications] = useState([])
 
-    <section className="section"><div className="container"><div className="content-block"><div className="content-block__visual fade-in">🌿</div><div className="content-block__body fade-in fade-in-delay-1"><h2>{t.bgTitle}</h2><p>{t.bg1}</p><p>{t.bg2}</p></div></div></div></section>
-    <section className="section section--alt"><div className="container"><div className="section-header text-center fade-in"><span className="section-header__tag">{t.qualTag}</span><h2 className="section-header__title">{t.qualTitle}</h2></div><div className="qualifications-list">{t.quals.map((q)=><div className="qualification-item fade-in" key={q[1]}><div className="qualification-item__icon">{q[0]}</div><div><h4>{q[1]}</h4><p>{q[2]}</p></div></div>)}</div></div></section>
+  useEffect(() => {
+    qualificationsService
+      .getAll()
+      .then(qualifications => setQualifications(qualifications))
+      .catch(err => console.error(err))
+  }, [])
 
-    <section className="section">
-      <div className="container">
-        <div className="content-block content-block--reverse">
-          <div className="content-block__visual fade-in">
-            ☀️
-          </div>
-          <div className="content-block__body fade-in fade-in-delay-1">
-            <h2>{t.approachTitle}</h2>
-            <p>{t.approach1}</p>
-            <p>{t.approach2}</p>
-            <Link to="/contact" className="btn btn--primary" style={{ marginTop: '1rem' }}>{t.button}</Link>
+  return (
+    <>
+      <PageHero tag={t.tag} title={t.title} subtitle={t.subtitle} />
+
+      <section className="section">
+        <div className="container">
+          <div className="content-block">
+            <div className="content-block__visual fade-in">
+              🌿
+            </div>
+            <div className="content-block__body fade-in fade-in-delay-1">
+              <h2>{t.bgTitle}</h2>
+              <p>{t.bg1}</p>
+              <p>{t.bg2}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </>)
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-header text-center fade-in">
+            <span className="section-header__tag">{t.qualTag}</span>
+            <h2 className="section-header__title">{t.qualTitle}</h2>
+          </div>
+          <div className="qualifications-list">
+            {qualifications.map((q) => {
+              const qual = q[language]
+
+              if (!qual) {
+                return null
+              }
+
+              return (
+                <div className="qualification-item fade-in" key={q.id}>
+                  <div className="qualification-item__icon">{q.icon}</div>
+                  <div>
+                    <h4>{qual.title}</h4>
+                    <p>{qual.text}</p>
+                  </div>
+                </div>
+              )}
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="content-block content-block--reverse">
+            <div className="content-block__visual fade-in">
+              ☀️
+            </div>
+            <div className="content-block__body fade-in fade-in-delay-1">
+              <h2>{t.approachTitle}</h2>
+              <p>{t.approach1}</p>
+              <p>{t.approach2}</p>
+              <Link to="/contact" className="btn btn--primary" style={{ marginTop: '1rem' }}>{t.button}</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }

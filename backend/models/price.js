@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 
 
 const priceSchema = mongoose.Schema({
-  onlineSession: Object,
-  inPersonSession: Object,
-  introductoryCall: Object
+  price: String,
+  en: Object,
+  fi: Object
 })
 
 priceSchema.set('toJSON', {

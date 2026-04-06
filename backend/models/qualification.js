@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 
 const qualificationSchema = mongoose.Schema({
   icon: String,
-  title: String,
-  desc: String
+  en: Object,
+  fi: Object
 })
 
 qualificationSchema.set('toJSON', {

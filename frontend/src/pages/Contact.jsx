@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import PageHero from '../components/PageHero'
 
 const content={
  en:{tag:'Contact',title:'Get in touch',subtitle:'Whether you have a question or you are ready to book a session, we would love to hear from you.',successTitle:'Thank you for reaching out',successText:'Your message has been marked as sent in this demo form. In the live version, this would be connected to email or a booking system.',name:'Your Name',namePh:'e.g. Alex Jansen',email:'Email Address',emailPh:'alex@example.com',phone:'Phone (optional)',phonePh:'+358 40 123 4567',service:'Interested In',select:'Select a service (optional)',options:['Mental Coaching','Solution-Focused Coaching','Solution-Focused Brief Therapy','Animal-Assisted Coaching','I am not sure yet'],message:'Your Message',messagePh:'Tell us a little about what you are looking for, or ask any questions you have...',send:'Send Message',privacyTitle:'Your Privacy Matters',privacyText:'Everything you share with us — in this form and in our sessions — is treated with the highest level of confidentiality. You can speak freely and feel safe.',locationTitle:'📍 Location',locationText:'Sessions available online and in person. Contact us for details on location.',responseTitle:'⏰ Response Time',responseText:'We aim to reply within 24–48 hours.'},
@@ -17,13 +18,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <span className="section-header__tag fade-in">{t.tag}</span>
-          <h1 className="page-hero__title fade-in fade-in-delay-1">{t.title}</h1>
-          <p className="page-hero__subtitle fade-in fade-in-delay-2">{t.subtitle}</p>
-        </div>
-      </section>
+      <PageHero tag={t.tag} title={t.title} subtitle={t.subtitle} />
 
       <section className="section">
         <div className="container">

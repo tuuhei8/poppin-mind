@@ -1,0 +1,88 @@
+{ 
+  "plans": [
+    {
+      "price": "50",
+      "time":"45",
+      "en": {
+        "title": "Online Session",
+        "subtitle": "Coaching or therapy from the comfort of your own space.",
+        "features": [
+          "Video call via a secure platform",
+          "Flexible scheduling",
+          "Available for all service types",
+          "Suitable for follow-up sessions"
+        ],
+        "button": "Book Online Session",
+        "outline": "outline"      
+      },
+      "fi": {
+        "title": "Etätapaaminen",
+        "subtitle": "Valmennusta tai terapiaa omasta rauhallisesta ympäristöstäsi.",
+        "features": [
+          "Videopuhelu turvallisen alustan kautta",
+          "Joustava ajanvaraus",
+          "Saatavilla kaikkiin palveluihin",
+          "Sopii myös jatkotapaamisiin"
+        ],
+        "button": "Varaa etätapaaminen",
+        "outline": "outline" 
+      }
+    },
+    {
+      "price": "60",
+      "time":"60",
+      "en": {
+        "title": "In-Person Session",
+        "subtitle": "Face-to-face coaching in a calm, welcoming environment.",
+        "features": [
+          "Private, comfortable setting",
+          "Full hour of dedicated time",
+          "Available for all service types",
+          "Includes animal-assisted options"
+        ],
+        "button": "Book In-Person Session",
+        "outline": "primary"      
+      },
+      "fi": {
+        "title": "Lähitapaaminen",
+        "subtitle": "Kasvokkainen valmennus rauhallisessa ja lämpimässä ympäristössä.",
+        "features": [
+          "Yksityinen ja mukava tila",
+          "Täysi tunti omistettua aikaa",
+          "Saatavilla kaikkiin palveluihin",
+          "Mahdollisuus eläinavusteisiin vaihtoehtoihin"
+        ],
+        "button": "Varaa lähitapaaminen",
+        "outline": "primary" 
+      }
+    },
+    {
+      "price": "0",
+      "time":"15–20",
+      "en": {
+        "title": "Introductory Call",
+        "subtitle": "A free, no-obligation conversation to see if we are a good fit.",
+        "features": [
+          "Get to know each other",
+          "Discuss your needs and goals",
+          "Ask any questions you have",
+          "No commitment required"
+        ],
+        "button": "Schedule Free Call",
+        "outline": "outline"      
+      },
+      "fi": {
+        "title": "Alkukeskustelu",
+        "subtitle": "Maksuton ja sitoumukseton keskustelu yhteensopivuuden arvioimiseksi.",
+        "features": [
+          "Tutustutaan toisiimme",
+          "Käydään läpi tarpeesi ja tavoitteesi",
+          "Voit esittää kysymyksiä",
+          "Ei sitoutumispakkoa"
+        ],
+        "button": "Varaa maksuton puhelu",
+        "outline": "outline" 
+      }
+    }
+  ]
+}

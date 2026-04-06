@@ -1,0 +1,70 @@
+{
+  "qualifications": [
+    {
+      "icon": "🎓",
+      "en": {
+        "title": "Two Master's Degrees",
+        "text": "Advanced academic training providing a strong theoretical and practical foundation."
+      },
+      "fi": {
+        "title": "Kaksi maisteritutkintoa",
+        "text": "Laaja akateeminen koulutus, joka luo vahvan teoreettisen ja käytännöllisen perustan."
+      }
+    },
+    {
+      "icon": "📚",
+      "en": {
+        "title": "Psychology Teaching",
+        "text": "Experience teaching psychology, deepening expertise in human behaviour and cognition."
+      },
+      "fi": {
+        "title": "Psykologian opetus",
+        "text": "Kokemus psykologian opettamisesta on syventänyt ymmärrystä ihmisen käyttäytymisestä ja ajattelusta."
+      }
+    },
+    {
+      "icon": "🤲",
+      "en": {
+        "title": "Special Education",
+        "text": "Work in special education, building skills in adaptive, empathetic support."
+      },
+      "fi": {
+        "title": "Erityisopetus",
+        "text": "Työ erityisopetuksessa on vahvistanut mukautuvaa ja empaattista tukiosaamista."
+      }
+    },
+    {
+      "icon": "🧠",
+      "en": {
+        "title": "Neuropsychiatric Coaching Certification",
+        "text": "Qualified neuropsychiatric coach with training in resilience, focus, and mindset development."
+      },
+      "fi": {
+        "title": "Neuropsykiatrinen valmennus -sertifiointi",
+        "text": "Koulutettu nepsy-valmentaja, jonka osaamiseen kuuluu resilienssi, keskittyminen ja ajattelutavan kehittäminen."
+      }
+    },
+    {
+      "icon": "🎯",
+      "en": {
+        "title": "Solution-Focused Methods",
+        "text": "Trained in solution-focused coaching and brief therapy approaches."
+      },
+      "fi": {
+        "title": "Ratkaisukeskeiset menetelmät",
+        "text": "Koulutus ratkaisukeskeisen coachingin ja lyhytterapian menetelmiin."
+      }
+    },
+    {
+      "icon": "🐾",
+      "en": {
+        "title": "Animal-Assisted Interventions",
+        "text": "Qualified to integrate animals into coaching sessions for deeper engagement."
+      },
+      "fi": {
+        "title": "Eläinavusteiset menetelmät",
+        "text": "Pätevyys hyödyntää eläimiä coachingissa syvemmän kontaktin ja oivallusten tukena."
+      }
+    }
+  ]
+}
