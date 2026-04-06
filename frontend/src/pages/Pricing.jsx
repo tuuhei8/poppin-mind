@@ -193,7 +193,7 @@ export default function Pricing() {
               }
 
               return (
-                <div className={`pricing-card ${plan.outline === 'primary' ? 'pricing-card--featured' : ''} fade-in fade-in-delay-${index+1}`} key={p.id}>
+                <div className={`pricing-card ${p.outline === 'primary' ? 'pricing-card--featured' : ''} fade-in fade-in-delay-${index+1}`} key={p.id}>
                   <h3 className="pricing-card__title">{plan.title}</h3>
                   <p className="pricing-card__desc">{plan.subtitle}</p>
                   <div className="pricing-card__price">

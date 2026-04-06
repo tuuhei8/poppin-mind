@@ -29,21 +29,7 @@ const content = {
     pricing: 'Hinnasto',
     contact: 'Yhteystiedot',
     rights: 'Kaikki oikeudet pidätetään.',
-  },
-  sv: {
-    description:
-      'Professionell coaching och lösningsfokuserad korttidsterapi som hjälper dig att upptäcka dina styrkor, övervinna hinder och skapa meningsfull förändring i ditt liv.',
-    services: 'Tjänster',
-    mental: 'Mental coaching',
-    solution: 'Lösningsfokuserad coaching',
-    brief: 'Korttidsterapi',
-    animal: 'Djurassisterad coaching',
-    quick: 'Snabblänkar',
-    about: 'Om',
-    pricing: 'Priser',
-    contact: 'Kontakt',
-    rights: 'Alla rättigheter förbehållna.',
-  },
+  }
 }
 
 export default function Footer() {
