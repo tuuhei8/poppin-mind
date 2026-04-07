@@ -3,8 +3,67 @@ import { useLanguage } from '../context/LanguageContext'
 import PageHero from '../components/PageHero'
 
 const content={
- en:{tag:'Contact',title:'Get in touch',subtitle:'Whether you have a question or you are ready to book a session, we would love to hear from you.',successTitle:'Thank you for reaching out',successText:'Your message has been marked as sent in this demo form. In the live version, this would be connected to email or a booking system.',name:'Your Name',namePh:'e.g. Alex Jansen',email:'Email Address',emailPh:'alex@example.com',phone:'Phone (optional)',phonePh:'+358 40 123 4567',service:'Interested In',select:'Select a service (optional)',options:['Mental Coaching','Solution-Focused Coaching','Solution-Focused Brief Therapy','Animal-Assisted Coaching','I am not sure yet'],message:'Your Message',messagePh:'Tell us a little about what you are looking for, or ask any questions you have...',send:'Send Message',privacyTitle:'Your Privacy Matters',privacyText:'Everything you share with us — in this form and in our sessions — is treated with the highest level of confidentiality. You can speak freely and feel safe.',locationTitle:'📍 Location',locationText:'Sessions available online and in person. Contact us for details on location.',responseTitle:'⏰ Response Time',responseText:'We aim to reply within 24–48 hours.'},
- fi:{tag:'Yhteystiedot',title:'Ota yhteyttä',subtitle:'Olipa sinulla kysymys tai olet valmis varaamaan ajan, kuulemme sinusta mielellämme.',successTitle:'Kiitos yhteydenotostasi',successText:'Viestisi on merkitty lähetetyksi tämän demon lomakkeessa. Julkisessa versiossa lomake voidaan yhdistää sähköpostiin tai varausjärjestelmään.',name:'Nimesi',namePh:'esim. Alex Jansen',email:'Sähköpostiosoite',emailPh:'alex@example.com',phone:'Puhelin (valinnainen)',phonePh:'+358 40 123 4567',service:'Kiinnostuksen kohde',select:'Valitse palvelu (valinnainen)',options:['Mental Coaching','Ratkaisukeskeinen coaching','Ratkaisukeskeinen lyhytterapia','Eläinavusteinen coaching','En ole vielä varma'],message:'Viestisi',messagePh:'Kerro lyhyesti mitä etsit tai kysy mitä tahansa mielessäsi on...',send:'Lähetä viesti',privacyTitle:'Yksityisyytesi on tärkeä',privacyText:'Kaikki, mitä jaat kanssamme — tässä lomakkeessa ja tapaamisissa — käsitellään erittäin luottamuksellisesti. Voit puhua vapaasti ja turvallisesti.',locationTitle:'📍 Sijainti',locationText:'Tapaamiset onnistuvat verkossa ja paikan päällä. Ota yhteyttä saadaksesi lisätietoja sijainnista.',responseTitle:'⏰ Vastausaika',responseText:'Pyrimme vastaamaan 24–48 tunnin kuluessa.'}
+ en: {
+  tag: 'Contact',
+  title: 'Get in touch',
+  subtitle: 'Whether you have a question or you are ready to book a session, we would love to hear from you.',
+  successTitle: 'Thank you for reaching out',
+  successText: 'Your message has been sent.',
+  name: 'Your Name',
+  namePh: 'e.g. Alex Jansen',
+  email: 'Email Address',
+  emailPh: 'alex@example.com',
+  phone: 'Phone (optional)',
+  phonePh: '+358 40 123 4567',
+  service: 'Interested In',
+  select: 'Select a service (optional)',
+  options: [
+    'Neuropsychiatric Coaching',
+    'Solution-Focused Coaching',
+    'Solution-Focused Brief Therapy',
+    'Animal-Assisted Coaching',
+    'I am not sure yet'
+  ],
+  message:'Your Message',
+  messagePh:'Tell us a little about what you are looking for, or ask any questions you have...',
+  send:'Send Message',
+  privacyTitle:'Your Privacy Matters',
+  privacyText:'Everything you share with us — in this form and in our sessions — is treated with the highest level of confidentiality. You can speak freely and feel safe.',
+  locationTitle:'📍 Location',
+  locationText:'Sessions available online and in person. Contact us for details on location.',
+  responseTitle:'⏰ Response Time',
+  responseText:'We aim to reply within 24–48 hours.'
+},
+ fi: {
+  tag: 'Yhteystiedot',
+  title: 'Ota yhteyttä',
+  subtitle: 'Olipa sinulla kysymys tai olet valmis varaamaan ajan, kuulemme sinusta mielellämme.',
+  successTitle: 'Kiitos yhteydenotostasi',
+  successText: 'Viestisi on lähetetty.',
+  name: 'Nimesi',
+  namePh: 'esim. Alex Jansen',
+  email: 'Sähköpostiosoite',
+  emailPh: 'alex@example.com',
+  phone: 'Puhelin (valinnainen)',
+  phonePh: '+358 40 123 4567',
+  service: 'Kiinnostuksen kohde',
+  select: 'Valitse palvelu (valinnainen)',
+  options: [
+    'Nepsy-valmennus',
+    'Ratkaisukeskeinen valmennus',
+    'Ratkaisukeskeinen lyhytterapia',
+    'Eläinavusteinen valmennus',
+    'En ole vielä varma'
+  ],
+  message:'Viestisi',
+  messagePh:'Kerro lyhyesti mitä etsit tai kysy mitä tahansa mielessäsi on...',
+  send:'Lähetä viesti',
+  privacyTitle:'Yksityisyytesi on tärkeä',
+  privacyText:'Kaikki, mitä jaat kanssamme — tässä lomakkeessa ja tapaamisissa — käsitellään erittäin luottamuksellisesti. Voit puhua vapaasti ja turvallisesti.',
+  locationTitle:'📍 Sijainti',
+  locationText:'Tapaamiset onnistuvat verkossa ja paikan päällä. Ota yhteyttä saadaksesi lisätietoja sijainnista.',
+  responseTitle:'⏰ Vastausaika',
+  responseText:'Pyrimme vastaamaan 24–48 tunnin kuluessa.'}
 }
 
 export default function Contact() {
@@ -13,7 +72,19 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true) }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const formData = new FormData(e.target);
+    formData.append("access_key", /*PUBLIC_KEY_HERE*/)
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json()
+    setSubmitted(data.success ? true : false)
+  }
 
   return (
     <>

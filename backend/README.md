@@ -11,7 +11,7 @@ Description of current backend functionality.
 3. Within the .env file add PORT=3000 (or another port number if you prefer, adjust vite.config.js accordingly)
 4. Set up a mongo database for development and testing, then add MONGODB_URI=link_to_db_here to .env
 
-In the app.js file the express.static('dist') statements are, for the time being, commented out. If uncommented they serves the frontend production build from 'dist'.
+In the app.js file the express.static('dist') statements serve the frontend production build from 'dist'.
 
 ### Documents, database structure and connections with the frontend
 
