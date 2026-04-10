@@ -7,7 +7,7 @@ const supportedLanguages = ['en', 'fi']
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState(() => {
     const stored = localStorage.getItem('poppin-mind-language')
-    return supportedLanguages.includes(stored) ? stored : 'en'
+    return supportedLanguages.includes(stored) ? stored : 'fi'
   })
 
   useEffect(() => {
