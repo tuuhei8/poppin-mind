@@ -71,11 +71,13 @@ export default function Contact() {
   const t = content[language]
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
+  const [error, setError] = useState(null)
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target);
-    formData.append("access_key", /*PUBLIC_KEY_HERE*/)
+    formData.append("access_key", /*ACCESS_KEY_HERE*/)
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -83,7 +85,13 @@ export default function Contact() {
     });
 
     const data = await response.json()
-    setSubmitted(data.success ? true : false)
+
+    if (data.success) {
+      setSubmitted(true)
+    } else {
+      console.log("Error", data);
+      setError(`Error: ${data.message}`);
+    }
   }
 
   return (
@@ -128,6 +136,7 @@ export default function Contact() {
                       <label htmlFor="message">{t.message}</label>
                       <textarea id="message" name="message" placeholder={t.messagePh} value={form.message} onChange={handleChange} required />
                     </div>
+                    <span style={ {color: 'red'} }>{error}</span>
                     <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>{t.send}</button>
                   </form>
               }
