@@ -101,6 +101,7 @@ export default function Contact({ services }) {
     } else {
       console.log("Error", data);
       setError(`Error: ${data.message}`);
+      setTimeout(() => setError(null), 20000)
     }
   }
 
