@@ -7,61 +7,14 @@ import PageHero from '../components/PageHero'
 
 const content = {
   en: {
-    tag:'Pricing',
-    title:'Transparent, fair pricing',
+    tag: 'Pricing',
+    title: 'Transparent, fair pricing',
     session: '/ session',
     minutes: 'minutes',
     free: 'Free',
-    subtitle:'Investing in yourself is one of the most valuable things you can do. Our pricing is clear and straightforward.',
-    plans:[
-      [
-        'Online Session',
-        'Coaching or therapy from the comfort of your own space.',
-        '€50',
-        '/ session',
-        '45 minutes',
-        [
-          'Video call via a secure platform',
-          'Flexible scheduling',
-          'Available for all service types',
-          'Suitable for follow-up sessions'
-        ],
-        'Book Online Session',
-        'outline'
-      ],
-      [
-        'In-Person Session',
-        'Face-to-face coaching in a calm, welcoming environment.',
-        '€60',
-        '/ session',
-        '60 minutes',
-        [
-          'Private, comfortable setting',
-          'Full hour of dedicated time',
-          'Available for all service types',
-          'Includes animal-assisted options'
-        ],
-        'Book In-Person Session',
-        'primary'
-      ],
-      [
-        'Introductory Call',
-        'A free, no-obligation conversation to see if we are a good fit.',
-        'Free',
-        '',
-        '15–20 minutes',
-        [
-          'Get to know each other',
-          'Discuss your needs and goals',
-          'Ask any questions you have',
-          'No commitment required'
-        ],
-        'Schedule Free Call',
-        'outline'
-      ]
-    ],
-    good:'Good to Know',
-    faq:'Frequently asked questions',
+    subtitle: 'Investing in yourself is one of the most valuable things you can do. Our pricing is clear and straightforward.',
+    good: 'Good to Know',
+    faq: 'Frequently asked questions',
     qs: [
       [
         '📅',
@@ -79,68 +32,22 @@ const content = {
         'Payment details are shared after booking. We accept bank transfer and common online payment methods.'
       ]
     ],
-    ctaTitle:'Questions about pricing?',
-    ctaText:'We are happy to discuss options. Reach out anytime.',
-    ctaButton:'Contact Us'},
-  fi:{
-    tag:'Hinnasto',
-    title:'Selkeä ja reilu hinnoittelu',
+    ctaTitle: 'Questions about pricing?',
+    ctaText: 'We are happy to discuss options. Reach out anytime.',
+    ctaButton: 'Contact Us'},
+  fi: {
+    tag: 'Hinnasto',
+    title: 'Selkeä ja reilu hinnoittelu',
     session: '/ tapaaminen',
     minutes: 'minuuttia',
     free: 'Maksuton',
-    subtitle:'Itsesi tukeminen on yksi arvokkaimmista investoinneista, joita voit tehdä. Hinnoittelumme on selkeä ja suoraviivainen.',
-    plans:[
+    subtitle: 'Itsesi tukeminen on yksi arvokkaimmista investoinneista, joita voit tehdä. Hinnoittelumme on selkeä ja suoraviivainen.',
+    good: 'Hyvä tietää',
+    faq: 'Usein kysytyt kysymykset',
+    qs: [
       [
-        'Etätapaaminen',
-        'Coachingia tai terapiaa omasta rauhallisesta ympäristöstäsi.',
-        '€50',
-        '/ tapaaminen',
-        '45 minuuttia',
-        [
-          'Videopuhelu turvallisen alustan kautta',
-          'Joustava ajanvaraus',
-          'Saatavilla kaikkiin palveluihin',
-          'Sopii myös jatkotapaamisiin'
-        ],
-        'Varaa etätapaaminen',
-        'outline'
-      ],
-      [
-        'Lähitapaaminen',
-        'Kasvokkainen coaching rauhallisessa ja lämpimässä ympäristössä.',
-        '€60',
-        '/ tapaaminen',
-        '60 minuuttia',
-        [
-          'Yksityinen ja mukava tila',
-          'Täysi tunti omistettua aikaa',
-          'Saatavilla kaikkiin palveluihin',
-          'Mahdollisuus eläinavusteisiin vaihtoehtoihin'
-        ],
-          'Varaa lähitapaaminen',
-          'primary'
-        ],
-        [
-          'Alkukeskustelu',
-          'Maksuton ja sitoumukseton keskustelu yhteensopivuuden arvioimiseksi.',
-          'Maksuton',
-          '',
-          '15–20 minuuttia',
-          [
-            'Tutustutaan toisiimme',
-            'Käydään läpi tarpeesi ja tavoitteesi',
-            'Voit esittää kysymyksiä',
-            'Ei sitoutumispakkoa'
-          ],
-          'Varaa maksuton puhelu',
-          'outline'
-        ]
-    ],
-    good:'Hyvä tietää',
-    faq:'Usein kysytyt kysymykset',
-    qs:[
-      [
-        '📅','Miten varaan ajan?',
+        '📅',
+        'Miten varaan ajan?',
         'Voit käyttää yhteydenottolomaketta tai lähettää sähköpostia. Etsimme yhdessä sopivan ajan.'
       ],
       [
@@ -154,9 +61,9 @@ const content = {
         'Maksutiedot toimitetaan varauksen jälkeen. Hyväksymme tilisiirron ja yleiset verkkomaksutavat.'
       ]
     ],
-    ctaTitle:'Kysymyksiä hinnoittelusta?',
-    ctaText:'Keskustelemme mielellämme vaihtoehdoista. Ota yhteyttä milloin vain.',
-    ctaButton:'Ota yhteyttä'
+    ctaTitle: 'Kysymyksiä hinnoittelusta?',
+    ctaText: 'Keskustelemme mielellämme vaihtoehdoista. Ota yhteyttä milloin vain.',
+    ctaButton: 'Ota yhteyttä'
   }
 }
 

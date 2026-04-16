@@ -2,76 +2,86 @@ import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import PageHero from '../components/PageHero'
 
-const content={
- en: {
-  tag: 'Contact',
-  title: 'Get in touch',
-  subtitle: 'Whether you have a question or you are ready to book a session, we would love to hear from you.',
-  successTitle: 'Thank you for reaching out',
-  successText: 'Your message has been sent.',
-  name: 'Your Name',
-  namePh: 'e.g. Alex Jansen',
-  email: 'Email Address',
-  emailPh: 'alex@example.com',
-  phone: 'Phone (optional)',
-  phonePh: '+358 40 123 4567',
-  service: 'Interested In',
-  select: 'Select a service (optional)',
-  options: [
-    'Neuropsychiatric Coaching',
-    'Solution-Focused Coaching',
-    'Solution-Focused Brief Therapy',
-    'Animal-Assisted Coaching',
-    'I am not sure yet'
-  ],
-  message:'Your Message',
-  messagePh:'Tell us a little about what you are looking for, or ask any questions you have...',
-  send:'Send Message',
-  privacyTitle:'Your Privacy Matters',
-  privacyText:'Everything you share with us — in this form and in our sessions — is treated with the highest level of confidentiality. You can speak freely and feel safe.',
-  locationTitle:'📍 Location',
-  locationText:'Sessions available online and in person. Contact us for details on location.',
-  responseTitle:'⏰ Response Time',
-  responseText:'We aim to reply within 24–48 hours.'
+const content = {
+  en: {
+    tag: 'Contact',
+    title: 'Get in touch',
+    subtitle: 'Whether you have a question or you are ready to book a session, we would love to hear from you.',
+    successTitle: 'Thank you for reaching out',
+    successText: 'Your message has been sent.',
+    name: 'Your Name',
+    namePh: 'e.g. Alex Jansen',
+    email: 'Email Address',
+    emailPh: 'alex@example.com',
+    phone: 'Phone (optional)',
+    phonePh: '+358 40 123 4567',
+    service: 'Interested In',
+    select: 'Select a service (optional)',
+    notSure: 'I am not sure yet',
+    message: 'Your Message',
+    messagePh: 'Tell us a little about what you are looking for, or ask any questions you have...',
+    send: 'Send Message',
+    privacyTitle: 'Your Privacy Matters',
+    privacyText: 'Everything you share with us — in this form and in our sessions — is treated with the highest level of confidentiality. You can speak freely and feel safe.',
+    locationTitle: '📍 Location',
+    locationText: 'Sessions available online and in person. Contact us for details on location.',
+    responseTitle: '⏰ Response Time',
+    responseText: 'We aim to reply within 24–48 hours.'
 },
- fi: {
-  tag: 'Yhteystiedot',
-  title: 'Ota yhteyttä',
-  subtitle: 'Olipa sinulla kysymys tai olet valmis varaamaan ajan, kuulemme sinusta mielellämme.',
-  successTitle: 'Kiitos yhteydenotostasi',
-  successText: 'Viestisi on lähetetty.',
-  name: 'Nimesi',
-  namePh: 'esim. Alex Jansen',
-  email: 'Sähköpostiosoite',
-  emailPh: 'alex@example.com',
-  phone: 'Puhelin (valinnainen)',
-  phonePh: '+358 40 123 4567',
-  service: 'Kiinnostuksen kohde',
-  select: 'Valitse palvelu (valinnainen)',
-  options: [
-    'Nepsy-valmennus',
-    'Ratkaisukeskeinen valmennus',
-    'Ratkaisukeskeinen lyhytterapia',
-    'Eläinavusteinen valmennus',
-    'En ole vielä varma'
-  ],
-  message:'Viestisi',
-  messagePh:'Kerro lyhyesti mitä etsit tai kysy mitä tahansa mielessäsi on...',
-  send:'Lähetä viesti',
-  privacyTitle:'Yksityisyytesi on tärkeä',
-  privacyText:'Kaikki, mitä jaat kanssamme — tässä lomakkeessa ja tapaamisissa — käsitellään erittäin luottamuksellisesti. Voit puhua vapaasti ja turvallisesti.',
-  locationTitle:'📍 Sijainti',
-  locationText:'Tapaamiset onnistuvat verkossa ja paikan päällä. Ota yhteyttä saadaksesi lisätietoja sijainnista.',
-  responseTitle:'⏰ Vastausaika',
-  responseText:'Pyrimme vastaamaan 24–48 tunnin kuluessa.'}
+  fi: {
+    tag: 'Yhteystiedot',
+    title: 'Ota yhteyttä',
+    subtitle: 'Olipa sinulla kysymys tai olet valmis varaamaan ajan, kuulemme sinusta mielellämme.',
+    successTitle: 'Kiitos yhteydenotostasi',
+    successText: 'Viestisi on lähetetty.',
+    name: 'Nimesi',
+    namePh: 'esim. Alex Jansen',
+    email: 'Sähköpostiosoite',
+    emailPh: 'alex@example.com',
+    phone: 'Puhelin (valinnainen)',
+    phonePh: '+358 40 123 4567',
+    service: 'Kiinnostuksen kohde',
+    select: 'Valitse palvelu (valinnainen)',
+    notSure: 'En ole vielä varma',
+    message: 'Viestisi',
+    messagePh: 'Kerro lyhyesti mitä etsit tai kysy mitä tahansa mielessäsi on...',
+    send: 'Lähetä viesti',
+    privacyTitle: 'Yksityisyytesi on tärkeä',
+    privacyText: 'Kaikki, mitä jaat kanssamme — tässä lomakkeessa ja tapaamisissa — käsitellään erittäin luottamuksellisesti. Voit puhua vapaasti ja turvallisesti.',
+    locationTitle: '📍 Sijainti',
+    locationText: 'Tapaamiset onnistuvat verkossa ja paikan päällä. Ota yhteyttä saadaksesi lisätietoja sijainnista.',
+    responseTitle: '⏰ Vastausaika',
+    responseText: 'Pyrimme vastaamaan 24–48 tunnin kuluessa.'
+  }
 }
 
-export default function Contact() {
+function ServiceList({ services }) {
+  const { language } = useLanguage()
+
+  return (
+    <>
+      {services.map(s => {
+        const service = s[language]
+
+        if (!service) {
+          return null
+        }
+
+        return (
+          <option key={service.title} value={service.title}>{service.title}</option>
+        )}
+      )}
+    </>
+  )
+}
+
+export default function Contact({ services }) {
   const { language } = useLanguage()
   const t = content[language]
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const [error, setError] = useState(null)
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
   const handleSubmit = async (e) => {
@@ -128,8 +138,8 @@ export default function Contact() {
                       <label htmlFor="service">{t.service}</label>
                       <select id="service" name="service" value={form.service} onChange={handleChange}>
                         <option value="">{t.select}</option>
-                        {t.options.map((option) =>
-                          <option key={option} value={option}>{option}</option>)}
+                        <ServiceList services={services} />
+                        <option value={t.notSure}>{t.notSure}</option>
                       </select>
                     </div>
                     <div className="form-group">

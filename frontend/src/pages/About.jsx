@@ -6,85 +6,28 @@ import PageHero from '../components/PageHero'
 
 const content = {
   en: {
-    tag: 'About', title: 'The person behind Poppin Mind', subtitle: 'A foundation of academic expertise, real-world experience, and genuine care for every individual.',
+    tag: 'About',
+    title: 'The person behind Poppin Mind',
+    subtitle: 'A foundation of academic expertise, real-world experience, and genuine care for every individual.',
     bgTitle: 'A background rooted in understanding people',
     bg1: 'The founder of Poppin Mind brings a rich academic and professional background in psychology and education. With experience teaching psychology and working in the field of special education, they have developed a deep understanding of how people think, learn, and grow.',
     bg2: 'Holding two master\'s degrees, they combine scholarly knowledge with practical, empathetic coaching methods. This blend ensures that every session is both grounded in evidence and shaped by genuine human connection.',
-    qualTag: 'Qualifications', qualTitle: 'Training & Expertise',
-    quals: [
-      [
-        '🎓',
-        'Two Master\'s Degrees',
-        'Advanced academic training providing a strong theoretical and practical foundation.'
-      ],
-      [
-        '📚',
-        'Psychology Teaching',
-        'Experience teaching psychology, deepening expertise in human behaviour and cognition.'
-      ],
-      [
-        '🤲',
-        'Special Education',
-        'Work in special education, building skills in adaptive, empathetic support.'],
-      [
-        '🧠',
-        'Neuropsychiatric Coaching Certification',
-        'Qualified neuropsychiatric coach with training in resilience, focus, and mindset development.'
-      ],
-      [
-        '🎯',
-        'Solution-Focused Methods',
-        'Trained in solution-focused coaching and brief therapy approaches.'
-      ],
-      [
-        '🐾',
-        'Animal-Assisted Interventions',
-        'Qualified to integrate animals into coaching sessions for deeper engagement.'
-      ],
-    ],
+    qualTag: 'Qualifications',
+    qualTitle: 'Training & Expertise',
     approachTitle: 'My approach',
     approach1: 'I believe that every person already holds the resources they need. My role is to create a warm, safe space where you can access those resources and build on them.',
     approach2: 'Whether you are navigating a life transition, seeking clarity on your goals, or working through challenges, I meet you where you are — without judgement, with full confidentiality, and with genuine care for your wellbeing.',
     button: "Let's Talk",
   },
   fi: {
-    tag: 'Tietoa', title: 'Poppin Mindin taustalla oleva henkilö', subtitle: 'Pohjana akateeminen osaaminen, käytännön kokemus ja aito välittäminen jokaisesta ihmisestä.',
+    tag: 'Tietoa',
+    title: 'Poppin Mindin taustalla oleva henkilö',
+    subtitle: 'Pohjana akateeminen osaaminen, käytännön kokemus ja aito välittäminen jokaisesta ihmisestä.',
     bgTitle: 'Tausta, joka perustuu ihmisen ymmärtämiseen',
     bg1: 'Poppin Mindin perustajalla on vahva akateeminen ja ammatillinen tausta psykologian ja kasvatuksen alalta. Psykologian opettamisen ja erityisopetuksen kokemuksen kautta on syntynyt syvä ymmärrys siitä, miten ihmiset ajattelevat, oppivat ja kasvavat.',
     bg2: 'Kaksi maisteritutkintoa yhdistyvät käytännöllisiin ja empaattisiin coaching-menetelmiin. Tämä yhdistelmä varmistaa, että jokainen tapaaminen on sekä tutkittuun tietoon pohjautuva että aidosti inhimillinen.',
-    qualTag: 'Koulutus', qualTitle: 'Osaaminen ja pätevyys',
-    quals: [
-      [
-        '🎓',
-        'Kaksi maisteritutkintoa',
-        'Laaja akateeminen koulutus, joka luo vahvan teoreettisen ja käytännöllisen perustan.'
-      ],
-      [
-        '📚',
-        'Psykologian opetus',
-        'Kokemus psykologian opettamisesta on syventänyt ymmärrystä ihmisen käyttäytymisestä ja ajattelusta.'
-      ],
-      [
-        '🤲',
-        'Erityisopetus',
-        'Työ erityisopetuksessa on vahvistanut mukautuvaa ja empaattista tukiosaamista.'
-      ],
-      [
-        '🧠',
-        'Neuropsykiatrinen valmennus -sertifiointi',
-        'Koulutettu nepsy-valmentaja, jonka osaamiseen kuuluu resilienssi, keskittyminen ja ajattelutavan kehittäminen.'
-      ],
-      [
-        '🎯',
-        'Ratkaisukeskeiset menetelmät',
-        'Koulutus ratkaisukeskeisen coachingin ja lyhytterapian menetelmiin.'
-      ],
-      [
-        '🐾',
-        'Eläinavusteiset menetelmät',
-        'Pätevyys hyödyntää eläimiä coachingissa syvemmän kontaktin ja oivallusten tukena.'
-      ],
-    ],
+    qualTag: 'Koulutus',
+    qualTitle: 'Osaaminen ja pätevyys',
     approachTitle: 'Lähestymistapani',
     approach1: 'Uskon, että jokaisella ihmisellä on jo itsessään ne voimavarat, joita hän tarvitsee. Minun roolini on luoda lämmin ja turvallinen tila, jossa pääset niiden äärelle ja voit vahvistaa niitä.',
     approach2: 'Olitpa elämäntilanteen muutoksessa, hakemassa suuntaa tavoitteillesi tai työstämässä haasteita, kohtaan sinut juuri siinä missä olet — ilman arvostelua, täysin luottamuksellisesti ja aidosti hyvinvointiasi tukien.',

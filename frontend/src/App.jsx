@@ -27,7 +27,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services serviceLinks={serviceLinks} />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact services={serviceLinks} />} />
           <Route path="/services/:path" element={<Service />} />
           <Route path="/NotFound" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
