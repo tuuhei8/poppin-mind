@@ -7,11 +7,11 @@ import PageHero from '../components/PageHero'
 const content = {
   en: {
     tag: 'About',
-    title: 'The person behind Poppin Mind',
+    title: 'Kaisa-Mari Majamäki',
     subtitle: 'A foundation of academic expertise, real-world experience, and genuine care for every individual.',
     bgTitle: 'A background rooted in understanding people',
-    bg1: 'The founder of Poppin Mind brings a rich academic and professional background in psychology and education. With experience teaching psychology and working in the field of special education, they have developed a deep understanding of how people think, learn, and grow.',
-    bg2: 'Holding two master\'s degrees, they combine scholarly knowledge with practical, empathetic coaching methods. This blend ensures that every session is both grounded in evidence and shaped by genuine human connection.',
+    bg1: 'Kaisa-Mari Majamäki, the founder of Poppin Mind brings a rich academic and professional background in psychology and education. With experience teaching psychology and working in the field of special education, she has developed a deep understanding of how people think, learn, and grow.',
+    bg2: 'Holding two master\'s degrees, she combines scholarly knowledge with practical, empathetic coaching methods. This blend ensures that every session is both grounded in evidence and shaped by genuine human connection.',
     qualTag: 'Qualifications',
     qualTitle: 'Training & Expertise',
     approachTitle: 'My approach',
@@ -21,10 +21,10 @@ const content = {
   },
   fi: {
     tag: 'Tietoa',
-    title: 'Poppin Mindin taustalla oleva henkilö',
+    title: 'Kaisa-Mari Majamäki',
     subtitle: 'Pohjana akateeminen osaaminen, käytännön kokemus ja aito välittäminen jokaisesta ihmisestä.',
     bgTitle: 'Tausta, joka perustuu ihmisen ymmärtämiseen',
-    bg1: 'Poppin Mindin perustajalla on vahva akateeminen ja ammatillinen tausta psykologian ja kasvatuksen alalta. Psykologian opettamisen ja erityisopetuksen kokemuksen kautta on syntynyt syvä ymmärrys siitä, miten ihmiset ajattelevat, oppivat ja kasvavat.',
+    bg1: 'Kaisa-Mari Majamäellä, joka on myös Poppin Mindin perustaja on vahva akateeminen ja ammatillinen tausta psykologian ja kasvatuksen alalta. Psykologian opettamisen ja erityisopetuksen kokemuksen kautta on syntynyt syvä ymmärrys siitä, miten ihmiset ajattelevat, oppivat ja kasvavat.',
     bg2: 'Kaksi maisteritutkintoa yhdistyvät käytännöllisiin ja empaattisiin coaching-menetelmiin. Tämä yhdistelmä varmistaa, että jokainen tapaaminen on sekä tutkittuun tietoon pohjautuva että aidosti inhimillinen.',
     qualTag: 'Koulutus',
     qualTitle: 'Osaaminen ja pätevyys',

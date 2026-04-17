@@ -104,7 +104,7 @@ export default function Pricing() {
                   <h3 className="pricing-card__title">{plan.title}</h3>
                   <p className="pricing-card__desc">{plan.subtitle}</p>
                   <div className="pricing-card__price">
-                    {p.price ? price : 'error'} <span>{price === t.free ? '' : t.session}</span>
+                    {p.price ? price : 'Error'} <span>{price === t.free ? '' : t.session}</span>
                   </div>
                   <p className="pricing-card__duration">{p.time} {t.minutes}</p>
                   <ul className="pricing-card__features">

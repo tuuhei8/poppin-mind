@@ -163,7 +163,7 @@ export default function Contact({ services }) {
               </div>
               <div className="contact-info__card">
                 <h3>📧 Email</h3>
-                <p>info@poppinmind.com</p>
+                <p>info@example.com</p>
               </div>
               <div className="contact-info__card">
                 <h3>{t.locationTitle}</h3>
