@@ -22,7 +22,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
+        <Route element={<Layout serviceLinks={serviceLinks} />}>
           <Route path="/" element={<Home serviceLinks={serviceLinks} />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services serviceLinks={serviceLinks} />} />

@@ -55,7 +55,7 @@ const content = {
   }
 }
 
-function ServiceList({ services }) {
+function ServiceOptions({ services }) {
   const { language } = useLanguage()
 
   return (
@@ -139,7 +139,7 @@ export default function Contact({ services }) {
                       <label htmlFor="service">{t.service}</label>
                       <select id="service" name="service" value={form.service} onChange={handleChange}>
                         <option value="">{t.select}</option>
-                        <ServiceList services={services} />
+                        <ServiceOptions services={services} />
                         <option value={t.notSure}>{t.notSure}</option>
                       </select>
                     </div>

@@ -14,6 +14,7 @@ export default function Service() {
   const [serviceObject, setServiceObject] = useState({})
 
   useEffect(() => {
+    setServiceObject({})
     servicesService
       .getServiceByPath(path)
       .then(serviceObject => setServiceObject(serviceObject))
