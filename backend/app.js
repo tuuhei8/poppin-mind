@@ -11,7 +11,7 @@ const serviceLinksRouter = require('./controllers/serviceLinks')
 
 const app = express()
 
-logger.info('connecting to MongoDB')
+logger.info('connecting to MongoDB...')
 
 mongoose.connect(config.MONGODB_URI)
   .then(() => {
