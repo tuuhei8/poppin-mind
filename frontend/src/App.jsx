@@ -29,7 +29,6 @@ export default function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact services={serviceLinks} />} />
           <Route path="/services/:path" element={<Service />} />
-          <Route path="/NotFound" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

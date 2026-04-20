@@ -3,8 +3,7 @@ import { useLanguage } from '../context/LanguageContext'
 
 const content = {
   en: {
-    description:
-      'Professional coaching and solution-focused brief therapy to help you discover your strengths, overcome obstacles, and create meaningful change in your life.',
+    description: 'Professional coaching and solution-focused brief therapy to help you discover your strengths, overcome obstacles, and create meaningful change in your life.',
     services: 'Services',
     nepsy: 'Neuropsychiatric Coaching',
     solution: 'Solution-Focused Coaching',
@@ -17,8 +16,7 @@ const content = {
     rights: 'All rights reserved.',
   },
   fi: {
-    description:
-      'Ammatillista coachingia ja ratkaisukeskeistä lyhytterapiaa, joka auttaa sinua löytämään vahvuutesi, voittamaan esteitä ja luomaan merkityksellistä muutosta elämääsi.',
+    description: 'Ammatillista coachingia ja ratkaisukeskeistä lyhytterapiaa, joka auttaa sinua löytämään vahvuutesi, voittamaan esteitä ja luomaan merkityksellistä muutosta elämääsi.',
     services: 'Palvelut',
     nepsy: 'Neuropsykiatrinen valmennus',
     solution: 'Ratkaisukeskeinen coaching',

@@ -5,7 +5,7 @@ export default function ContentList({ content }) {
 
   return (
     <ul>
-      {content.list.map((item)=><li key={item}>{item}</li>)}
+      {content.list.map((item) => <li key={item}>{item}</li>)}
     </ul>
   )
 }
