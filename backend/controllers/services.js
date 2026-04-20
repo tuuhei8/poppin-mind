@@ -18,6 +18,8 @@ servicesRouter.get('/:path', async (request, response, next) => {
     const service = await Service.findOne({path: request.params.path})
     if (service) {
       response.json(service)
+    } else {
+      response.status(400).send({ error: 'malformatted path' })
     }
   } catch (exception) {
     next(exception)
