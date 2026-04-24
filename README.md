@@ -18,7 +18,7 @@ Lomake käyttää web3forms palvelua viestien käsittelyyn frontendistä, viesti
 1. Luo avainkoodi (access key) palveluun  [web3forms](https://web3forms.com/).
 2. Navigoi hakemistoon frontend/src/pages ja avaa tiedosto Contact.jsx.
 3. Rivillä 99 korvaa "/* ACCESS_KEY_HERE */" luomallasi avainkoodilla.
-4. Rivillä 180 korvaa "info@example.com" yrityksen sähköpostiosoitteella.
+4. Rivillä 180 korvaa "```info@example.com```" yrityksen sähköpostiosoitteella.
 5. Avaa terminaali (joko hakemistossa frontend tai backend) ja suorita:
 
     ```bash
