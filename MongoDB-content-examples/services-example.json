@@ -11,7 +11,6 @@
         "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
       }
     },
-  
     {
       "path": "solution-focused-coaching",
       "icon": "🎯",
@@ -24,7 +23,6 @@
         "summary": "Tulevaisuuteen suuntautuva lähestymistapa, joka auttaa määrittämään tavoitteesi ja löytämään käytännölliset seuraavat askeleet."
       }
     },
-  
     {
       "path": "solution-focused-brief-therapy",
       "icon": "💬",
@@ -37,7 +35,6 @@
         "summary": "Jäsennelty, lyhytkestoinen terapeuttinen lähestymistapa, joka auttaa aikaansaamaan merkityksellistä muutosta."
       }
     },
-  
     {
       "path": "animal-assisted-coaching",
       "icon": "🐾",
@@ -52,14 +49,10 @@
     }
   ],
 
-
-
   "services": [
-    
     { 
       "path": "neuropsychiatric-coaching",
       "en": {
-        "tag": "Service",
         "title": "Neuropsychiatric coaching",
         "subtitle":"Build resilience, confidence, and mental clarity through a supportive and goal-oriented process.",
         "what": {
@@ -94,7 +87,6 @@
         "contactBannerButton": "Book a Session"
       },
       "fi": {
-        "tag": "Palvelu",
         "title": "Neuropsykiatrinen valmennus",
         "subtitle": "Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.",
         "what": {
@@ -129,11 +121,9 @@
         "contactBannerButton": "Varaa aika"
       }
     },
-  
     {
       "path": "solution-focused-coaching", 
       "en": {
-        "tag": "Service",
         "title": "Solution-Focused Coaching",
         "subtitle":"A forward-looking approach that helps you identify what you want and find the most direct path to get there.",
         "what": {
@@ -168,7 +158,6 @@
         "contactBannerButton": "Get in Touch"
       },
       "fi": {
-        "tag": "Palvelu",
         "title": "Ratkaisukeskeinen valmennus",
         "subtitle": "Tulevaisuuteen suuntautuva lähestymistapa, joka auttaa tunnistamaan mitä haluat ja löytämään suoran reitin sitä kohti.",
         "what": {
@@ -203,11 +192,9 @@
         "contactBannerButton": "Ota yhteyttä"
       }
     },
-
     {
       "path": "solution-focused-brief-therapy", 
       "en": {
-        "tag": "Service",
         "title": "Solution-Focused Brief Therapy",
         "subtitle":"Short-term therapeutic support centred on strengths, goals, and meaningful change.",
         "what": {
@@ -242,7 +229,6 @@
         "contactBannerButton": "Book a Session"
       },
       "fi": {
-        "tag": "Palvelu",
         "title": "Ratkaisukeskeinen lyhytterapia",
         "subtitle": "Lyhytkestoista terapeuttista tukea, jonka keskiössä ovat vahvuudet, tavoitteet ja merkityksellinen muutos.",
         "what": {
@@ -277,13 +263,9 @@
         "contactBannerButton": "Varaa aika"
       }
     },
-    
-    
-    
     {
       "path": "animal-assisted-coaching",
       "en": {
-        "tag": "Service",
         "title": "Animal-Assisted Coaching",
         "subtitle":"Experience the unique power of working alongside animals to foster emotional awareness, presence, and personal growth.",
         "what": {
@@ -318,7 +300,6 @@
         "contactBannerButton": "Get in Touch"
       },
       "fi": {
-        "tag": "Palvelu",
         "title": "Eläinavusteinen valmennus",
         "subtitle": "Koe eläinten kanssa työskentelyn ainutlaatuinen voima tunnetietoisuuden, läsnäolon ja henkilökohtaisen kasvun tukena.",
         "what": {

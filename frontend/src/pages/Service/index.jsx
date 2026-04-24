@@ -8,8 +8,18 @@ import { useEffect, useState } from 'react'
 import servicesService from '../../services/services'
 import PageHero from '../../components/PageHero'
 
+const content = {
+  en: {
+    tag: 'Service'
+  },
+  fi: {
+    tag: 'Palvelu'
+  }
+}
+
 export default function Service() {
   const { language } = useLanguage()
+  const t = content[language]
   const path = useParams().path
   const [serviceObject, setServiceObject] = useState({})
 
@@ -34,7 +44,7 @@ export default function Service() {
 
   return (
     <>
-      <PageHero tag={service.tag} title={service.title} subtitle={service.subtitle} />
+      <PageHero tag={t.tag} title={service.title} subtitle={service.subtitle} />
 
       <ContentBlock content={service.what} />
       <ContentBlockReverse content={service.how} />

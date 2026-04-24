@@ -88,7 +88,6 @@ export default function Pricing() {
           <div className="pricing-grid">
             {plans.map((p, index) => {
               const plan = p[language]
-              
 
               if (!plan) {
                 return null

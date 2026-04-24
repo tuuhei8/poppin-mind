@@ -21,6 +21,7 @@ const content = {
     message: 'Your Message',
     messagePh: 'Tell us a little about what you are looking for, or ask any questions you have...',
     send: 'Send Message',
+    error: 'Error: A problem occurred while trying to send your message, please try again later or contact us through email.',
     privacyTitle: 'Your Privacy Matters',
     privacyText: 'Everything you share with us — in this form and in our sessions — is treated with the highest level of confidentiality. You can speak freely and feel safe.',
     locationTitle: '📍 Location',
@@ -46,6 +47,7 @@ const content = {
     message: 'Viestisi',
     messagePh: 'Kerro lyhyesti mitä etsit tai kysy mitä tahansa mielessäsi on...',
     send: 'Lähetä viesti',
+    error: 'Virhe: Lomakkeen käsittelyssä ilmeni ongelma, ole hyvä ja yritä myöhemmin uudelleen tai ota yhteyttä sähköpostin kautta.',
     privacyTitle: 'Yksityisyytesi on tärkeä',
     privacyText: 'Kaikki, mitä jaat kanssamme — tässä lomakkeessa ja tapaamisissa — käsitellään erittäin luottamuksellisesti. Voit puhua vapaasti ja turvallisesti.',
     locationTitle: '📍 Sijainti',
@@ -82,12 +84,24 @@ export default function Contact({ services }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const [error, setError] = useState(null)
 
+  function errorMessage() {
+    setError(t.error);
+    setTimeout(() => setError(null), 20000)
+  }
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target);
-    formData.append("access_key", /*ACCESS_KEY_HERE*/)
+
+    try {
+      formData.append("access_key", /*ACCESS_KEY_HERE*/)
+    } catch (e) {
+      console.error(e)
+      errorMessage()
+      return null
+    }
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -98,10 +112,10 @@ export default function Contact({ services }) {
 
     if (data.success) {
       setSubmitted(true)
+      setTimeout(() => setSubmitted(false), 60000)
     } else {
-      console.log("Error", data);
-      setError(`Error: ${data.message}`);
-      setTimeout(() => setError(null), 20000)
+      console.error(data);
+      errorMessage()
     }
   }
 
