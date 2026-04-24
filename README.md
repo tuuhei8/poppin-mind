@@ -41,7 +41,7 @@ Tietokannassa tarvitset seuraavat dokumenttikokoelmat:
 
 Servicelinks dokumentti näyttää seuraavalta:
 
-    ```json
+    ```js
    {
       "path": "neuropsychiatric-coaching",
       "icon": "🧠",
@@ -54,7 +54,7 @@ Servicelinks dokumentti näyttää seuraavalta:
         "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
       }
     }
-   ```
+  
 
 Kun linkkiä klikataan ohjelma hakee "path" (polku) kentän sisältämän osoitteen perusteella service-dokumentin jolla on identtinen "path"-kenttä.
 
