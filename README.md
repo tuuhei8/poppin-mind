@@ -24,7 +24,7 @@ Lomake käyttää web3forms palvelua viestien käsittelyyn frontendistä, viesti
     ```bash
    npm run build:ui
    ```
-  Komento poistaa backendin nykyisen dist-hakemiston ja luo ja kopioi sen tilalle uuden. Vaihtoehtoisesti voit myös käyttää komentoa:
+  Komento poistaa backendin nykyisen dist-hakemiston ja luo ja kopioi sen tilalle uuden. Vaihtoehtoisesti voit myös navigoida terminaalissa frontend-hakemistoon ja käyttää komentoa:
 
     ```bash
    npm run build
