@@ -1,0 +1,52 @@
+{
+  "serviceLinks": [
+    {
+      "path": "neuropsychiatric-coaching",
+      "icon": "🧠",
+      "en": {
+        "title": "Neuropsychiatric coaching",
+        "summary": "Build mental resilience, develop focus, and cultivate a mindset that supports your goals."
+      },
+      "fi": {
+        "title": "Neuropsykiatrinen valmennus",
+        "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
+      }
+    },
+    {
+      "path": "solution-focused-coaching",
+      "icon": "🎯",
+      "en": {
+        "title": "Solution-Focused Coaching",
+        "summary": "A future-oriented approach that helps you define goals and find practical steps forward."
+      },
+      "fi": {
+        "title": "Ratkaisukeskeinen valmennus",
+        "summary": "Tulevaisuuteen suuntautuva lähestymistapa, joka auttaa määrittämään tavoitteesi ja löytämään käytännölliset seuraavat askeleet."
+      }
+    },
+    {
+      "path": "solution-focused-brief-therapy",
+      "icon": "💬",
+      "en": {
+        "title": "Solution-Focused Brief Therapy",
+        "summary": "A structured, short-term therapeutic approach that helps you create meaningful change in a focused timeframe."
+      },
+      "fi": {
+        "title": "Ratkaisukeskeinen lyhytterapia",
+        "summary": "Jäsennelty, lyhytkestoinen terapeuttinen lähestymistapa, joka auttaa aikaansaamaan merkityksellistä muutosta."
+      }
+    },
+    {
+      "path": "animal-assisted-coaching",
+      "icon": "🐾",
+      "en": {
+        "title": "Animal-Assisted Coaching",
+        "summary": "Working alongside animals to promote emotional connection, presence, and insight."
+      },
+      "fi": {
+        "title": "Eläinavusteinen valmennus",
+        "summary": "Työskentely eläinten kanssa voi lisätä tunnetason yhteyttä, läsnäoloa ja oivalluksia."
+      }
+    }
+  ]
+}
