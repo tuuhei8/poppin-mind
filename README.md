@@ -32,7 +32,7 @@ Lomake käyttää web3forms palvelua viestien käsittelyyn frontendistä, viesti
 
   ja manuaalisesti siirtää frontendin juureen luodun dist-hakemiston backendin juureen.
 
-Backend jakaa express.staticia käyttäen frontendin staattisen sisällön backendin juuren dist-hakemistosta.
+Backend jakaa express.staticia käyttäen frontendin staattisen sisällön backendin juuren dist-hakemistosta ja polut puristetaan compression middlewarella.
 
 ## Tietokanta
 

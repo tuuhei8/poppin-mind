@@ -8,6 +8,7 @@ const servicesRouter = require('./controllers/services')
 const pricesRouter = require('./controllers/prices')
 const qualificationsRouter = require('./controllers/qualifications')
 const serviceLinksRouter = require('./controllers/serviceLinks')
+const compression = require('compression')
 
 const app = express()
 
@@ -20,6 +21,8 @@ mongoose.connect(config.MONGODB_URI)
   .catch((error) => {
     logger.error('error connecting to MongoDB:', error.message)
   })
+
+app.use(compression())
 
 app.use(express.static('dist'))
 
