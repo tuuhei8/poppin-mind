@@ -38,7 +38,7 @@ export default function Service() {
     console.error(error)
   }
 
-  if (!service || !serviceObject) {
+  if (!service) {
     return <NotFound />
   }
 
