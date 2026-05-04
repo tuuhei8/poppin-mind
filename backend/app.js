@@ -8,7 +8,7 @@ const servicesRouter = require('./controllers/services')
 const pricesRouter = require('./controllers/prices')
 const qualificationsRouter = require('./controllers/qualifications')
 const serviceLinksRouter = require('./controllers/serviceLinks')
-const compression = require('compression')
+//const compression = require('compression')
 
 const app = express()
 
@@ -22,7 +22,7 @@ mongoose.connect(config.MONGODB_URI)
     logger.error('error connecting to MongoDB:', error.message)
   })
 
-app.use(compression())
+//app.use(compression())
 
 app.use(express.static('dist'))
 
@@ -35,7 +35,7 @@ app.use([
 app.use('/services/:path', express.static('dist'))
 app.use('/:path', express.static('dist'))
 
-app.use(morgan('tiny'))
+app.use(morgan('method :url :status :res[content-encoding] - :response-time ms'))
 
 app.use('/api/services', servicesRouter)
 app.use('/api/serviceLinks', serviceLinksRouter)
