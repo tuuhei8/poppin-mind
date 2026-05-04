@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 
 const serviceSchema = mongoose.Schema({
   path: String,
-  en: Object,
-  fi: Object
+  link: Object,
+  content: Object,
 })
 
 serviceSchema.set('toJSON', {

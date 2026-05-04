@@ -19,9 +19,7 @@ In the app.js file the express.static('dist') statements serve the frontend prod
 
 #### Servicelinks and Services
 
-The App.jsx gets the information for links in the Home.jsx and Services.jsx pages from a mongo collection named 'servicelinks', at /api/serviceLinks. When one of the links is used a parameterized route is used to open the component in a folder named Service. The useEffect block in the Service folder's index.jsx checks the path parameter of the URL and gets the matching service's details based on the "path" field, which should be identical in the matching service and servicelink documents.
-
-Ready-made examples for the 'servicelinks' and 'services' document collections can be found at the root folder within services-example.json file.
+Both /api/servicelinks and /api/services/:path connect to a MongoDB collection named 'services' and return the relevant parts of the document(s). See services-example for details on document structure.
 
 #### Pricing
 
@@ -33,17 +31,15 @@ Qualifications-example.json contains an example collection of documents for qual
 
 ## Endpoints
 
-There are five endpoints currently available:
+There are four endpoints currently available:
 
-1. /api/services
+1. /api/services/:path
 
-2. /api/services/:path
+2. /api/servicelinks
 
-3. /api/servicelinks
+3. /api/qualifications
 
-4. /api/qualifications
-
-5. /api/prices
+4. /api/prices
 
 All of the above endpoints can be tested with the test files found in the "rest-tests" folder (requires REST Client plugin for Visual Studio Code)
 

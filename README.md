@@ -32,7 +32,7 @@ Lomake käyttää web3forms palvelua viestien käsittelyyn frontendistä, viesti
 
   ja manuaalisesti siirtää frontendin juureen luodun dist-hakemiston backendin juureen.
 
-Backend jakaa express.staticia käyttäen frontendin staattisen sisällön backendin juuren dist-hakemistosta ja polut puristetaan compression middlewarella.
+Backend jakaa express.staticia käyttäen frontendin staattisen sisällön backendin juuren dist-hakemistosta.
 
 ## Tietokanta
 
@@ -40,117 +40,109 @@ Backend on suunniteltu käyttämään MongoDB Atlas tietokantaa, backend hakee y
 
 Tietokannassa tarvitset seuraavat dokumenttikokoelmat:
 
-1. servicelinks
-2. services
-3. prices
-4. qualifications
-
-### Servicelinks
-
-Servicelinks dokumentti näyttää seuraavalta:
-
-  ```json
-   {
-      "path": "neuropsychiatric-coaching",
-      "icon": "🧠",
-      "en": {
-        "title": "Neuropsychiatric coaching",
-        "summary": "Build mental resilience, develop focus, and cultivate a mindset that supports your goals."
-      },
-      "fi": {
-        "title": "Neuropsykiatrinen valmennus",
-        "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
-      }
-    }
-  ```
-
-Kun linkkiä klikataan ohjelma hakee "path" (polku) kentän sisältämän osoitteen perusteella service-dokumentin jolla on identtinen "path"-kenttä.
-
-"Icon" (ikoni) kenttä sisältää Unicode emojin ja se tulee näkyviin Home (Koti) ja Services (Palvelut) sivuilla.
-
-"en" ja "fi" kentät sisältävät englannin ja suomenkieliset versiot "title" (otsikko) ja "summary" (lyhyt kuvaus) kentistä. Sekä otsikko että kuvaus löytyvät luonnollisesti myös Koti ja Palvelut sivuilta mutta otsikkoa käytetään myös footerista löytyvissä linkeissä ja Contact (Yhteystiedot) sivun lomakkeen valikossa.
+1. services
+2. prices
+3. qualifications
 
 ### Services
 
-Kun servicelink-dokumentin pohjalta luotua linkkiä klikataan frontend hakee parametrisoidun polun kautta servicelinkin "path"-kentän arvon perusteella service-dokumentin jolla on identtinen "path"-kenttä.
-
-Esimerkki yllä olevaa servicelink-dokumenttia vastaavasta service-dokumentista:
+Esimerkki service-dokumentista:
 
   ```json
-    { 
+    {
       "path": "neuropsychiatric-coaching",
-      "en": {
-        "title": "Neuropsychiatric coaching",
-        "subtitle":"Build resilience, confidence, and mental clarity through a supportive and goal-oriented process.",
-        "what": {
-          "icon": "🧠",
-          "title": "What is neuropsychiatric coaching?",
-          "p1": "Neuropsychiatric coaching helps you strengthen the mindset and habits that support performance, wellbeing, and everyday life. It can help with confidence, motivation, focus, and emotional resilience.",
-          "p2": "Sessions are practical, reflective, and tailored to you. Together, we identify what is getting in your way and what will move you forward.",
-          "list": []
+      "link": {
+        "icon": "🧠",
+        "en": {
+          "title": "Neuropsychiatric coaching",
+          "summary": "Build mental resilience, develop focus, and cultivate a mindset that supports your goals."
         },
-        "how": {
-          "icon": "⚡",
-          "title": "What can it help with?",
-          "p1": "",
-          "p2": "",
-          "list": [
-            "Building confidence and self-belief",
-            "Managing stress and pressure",
-            "Improving focus and motivation",
-            "Strengthening emotional resilience",
-            "Preparing for change or challenges"
-            ]
-        },
-        "who": {
-          "icon": "🌟",
-          "title": "Who is it for?",
-          "p1": "Neuropsychiatric coaching is for anyone who wants support in developing their inner resources. Whether you are facing a demanding season, striving toward a goal, or simply wanting to feel stronger and clearer, this approach can help.",
-          "p2": "It is suitable for individuals, students, professionals, and anyone seeking practical, supportive growth.",
-          "list": []
-        },
-        "contactBannerTitle": "Ready to strengthen your mindset?",
-        "contactBannerText": "Let us talk about what support would be most helpful for you.",
-        "contactBannerButton": "Book a Session"
+        "fi": {
+          "title": "Neuropsykiatrinen valmennus",
+          "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
+      }
       },
-      "fi": {
-        "title": "Neuropsykiatrinen valmennus",
-        "subtitle": "Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.",
-        "what": {
-          "icon": "🧠",
-          "title": "Mitä nepsy-valmennus on?",
-          "p1": "Nepsy-valmennus auttaa vahvistamaan ajattelutapaa ja tapoja, jotka tukevat suorituskykyä, hyvinvointia ja arkea. Se voi auttaa esimerkiksi itseluottamuksen, motivaation, keskittymisen ja tunne-elämän resilienssin kehittämisessä.",
-          "p2": "Tapaamiset ovat käytännöllisiä, reflektoivia ja juuri sinulle räätälöityjä. Yhdessä tunnistamme, mikä estää etenemistäsi ja mikä vie sinua eteenpäin.",
-          "list": []
+      "content": {
+        "en": {
+          "title": "Neuropsychiatric coaching",
+          "subtitle":"Build resilience, confidence, and mental clarity through a supportive and goal-oriented process.",
+          "what": {
+            "icon": "🧠",
+            "title": "What is neuropsychiatric coaching?",
+            "p1": "Neuropsychiatric coaching helps you strengthen the mindset and habits that support performance, wellbeing, and everyday life. It can help with confidence, motivation, focus, and emotional resilience.",
+            "p2": "Sessions are practical, reflective, and tailored to you. Together, we identify what is getting in your way and what will move you forward.",
+            "list": []
+          },
+          "how": {
+            "icon": "⚡",
+            "title": "What can it help with?",
+            "p1": "",
+            "p2": "",
+            "list": [
+              "Building confidence and self-belief",
+              "Managing stress and pressure",
+              "Improving focus and motivation",
+              "Strengthening emotional resilience",
+              "Preparing for change or challenges"
+              ]
+          },
+          "who": {
+            "icon": "🌟",
+            "title": "Who is it for?",
+            "p1": "Neuropsychiatric coaching is for anyone who wants support in developing their inner resources. Whether you are facing a demanding season, striving toward a goal, or simply wanting to feel stronger and clearer, this approach can help.",
+            "p2": "It is suitable for individuals, students, professionals, and anyone seeking practical, supportive growth.",
+            "list": []
+          },
+          "contactBannerTitle": "Ready to strengthen your mindset?",
+          "contactBannerText": "Let us talk about what support would be most helpful for you.",
+          "contactBannerButton": "Book a Session"
         },
-        "how": {
-          "icon": "⚡",
-          "title": "Missä se voi auttaa?",
-          "p1": "",
-          "p2": "",
-          "list": [
-            "Itseluottamuksen vahvistaminen",
-            "Stressin ja paineen hallinta",
-            "Keskittymisen ja motivaation kehittäminen",
-            "Tunne-elämän resilienssin vahvistaminen",
-            "Valmistautuminen muutoksiin tai haasteisiin"
-          ]
-        },
-        "who": {
-          "icon": "🌟",
-          "title": "Kenelle se sopii?",
-          "p1":"Nepsy-valmennus sopii kaikille, jotka haluavat kehittää sisäisiä voimavarojaan. Olitpa vaativassa elämäntilanteessa, etenemässä kohti tavoitetta tai haluamassa lisää selkeyttä ja vahvuutta, tästä voi olla hyötyä.",
-          "p2": "Se sopii yksilöille, opiskelijoille, ammattilaisille ja kaikille, jotka kaipaavat käytännöllistä ja kannattelevaa kasvua.",
-          "list": []
-        },
-        "contactBannerTitle": "Haluatko vahvistaa ajattelutapaasi?",
-        "contactBannerText": "Keskustellaan siitä, millainen tuki olisi sinulle hyödyllisintä.",
-        "contactBannerButton": "Varaa aika"
+        "fi": {
+          "title": "Neuropsykiatrinen valmennus",
+          "subtitle": "Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.",
+          "what": {
+            "icon": "🧠",
+            "title": "Mitä nepsy-valmennus on?",
+            "p1": "Nepsy-valmennus auttaa vahvistamaan ajattelutapaa ja tapoja, jotka tukevat suorituskykyä, hyvinvointia ja arkea. Se voi auttaa esimerkiksi itseluottamuksen, motivaation, keskittymisen ja tunne-elämän resilienssin kehittämisessä.",
+            "p2": "Tapaamiset ovat käytännöllisiä, reflektoivia ja juuri sinulle räätälöityjä. Yhdessä tunnistamme, mikä estää etenemistäsi ja mikä vie sinua eteenpäin.",
+            "list": []
+          },
+          "how": {
+            "icon": "⚡",
+            "title": "Missä se voi auttaa?",
+            "p1": "",
+            "p2": "",
+            "list": [
+              "Itseluottamuksen vahvistaminen",
+              "Stressin ja paineen hallinta",
+              "Keskittymisen ja motivaation kehittäminen",
+              "Tunne-elämän resilienssin vahvistaminen",
+              "Valmistautuminen muutoksiin tai haasteisiin"
+            ]
+          },
+          "who": {
+            "icon": "🌟",
+            "title": "Kenelle se sopii?",
+            "p1":"Nepsy-valmennus sopii kaikille, jotka haluavat kehittää sisäisiä voimavarojaan. Olitpa vaativassa elämäntilanteessa, etenemässä kohti tavoitetta tai haluamassa lisää selkeyttä ja vahvuutta, tästä voi olla hyötyä.",
+            "p2": "Se sopii yksilöille, opiskelijoille, ammattilaisille ja kaikille, jotka kaipaavat käytännöllistä ja kannattelevaa kasvua.",
+            "list": []
+          },
+          "contactBannerTitle": "Haluatko vahvistaa ajattelutapaasi?",
+          "contactBannerText": "Keskustellaan siitä, millainen tuki olisi sinulle hyödyllisintä.",
+          "contactBannerButton": "Varaa aika"
+        }
       }
     }
   ```
 
-Dokumentti sisältää esittelyn palvelusta englanniksi ("en"-kenttä) ja suomeksi ("fi"-kenttä).
+
+Link-kentän sisällön perusteella luodaan "Home" (koti) ja "Services" (palvelut) sivuilla näkyvät linkit.
+
+Kun linkkiä klikataan ohjelma hakee "path" (polku) kentän sisältämän parametrin perusteella service-dokumentin "content" (sisältö) kentän.
+
+"en" ja "fi" kentät sisältävät englannin ja suomenkieliset versiot "title" (otsikko) ja "summary" (lyhyt kuvaus) kentistä. "Icon" (ikoni) sisältää Unicode-standardin emojin. Sekä otsikko että kuvaus löytyvät koti ja palvelut sivujen lisäksi myös footerista löytyvissä linkeissä ja Contact (Yhteystiedot) sivun lomakkeen valikossa.
+
+Dokumentin content-kenttä sisältää esittelyn palvelusta englanniksi ("en"-kenttä) ja suomeksi ("fi"-kenttä).
 
 Kieltä lukuunottamatta "en"- ja "fi"-kenttien sisältö on sama. "title"-kenttä sisältää artikkelin otsikon ja "subtitle"-kenttä alaotsikon.
 
@@ -158,7 +150,7 @@ Seuraavaksi artikkelissa on kolme palvelun esittelyyn tarkoitettua kenttää "wh
 
 Kaikki kolme esittely-kenttää ovat rakenteeltaan samanlaisia, niissä on "icon" Unicode-standardin emojille, "title" otsikolle, "p1" ja "p2" tekstiä sisältäville paragrafeille ja "list" asialistalle. Paragrafeille ja listalle tarkoitetuista voi halutessaan käyttää vain yhtä tai kahta, kaikkia ei siis tarvitse väkisin mennä täyttämään.
 
-Lopuksi dokumentissa on vielä kentät sivun alaosassa näkyvälle kontakti-sivulle vievälle bannerille jolle voit asettaa haluamasi otsikon, tekstin ja linkki-napin tekstin. 
+Lopuksi content-kentässä on vielä kentät sivun alaosassa näkyvälle kontakti-sivulle vievälle bannerille jolle voit asettaa haluamasi otsikon, tekstin ja linkki-napin tekstin.
 
 ### Prices
 

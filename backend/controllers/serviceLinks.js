@@ -1,11 +1,15 @@
 const servicelinksRouter = require('express').Router()
 
-const ServiceLink = require('../models/serviceLink')
+const Service = require('../models/service')
 
 servicelinksRouter.get('/', async (request, response, next) => {
   try {
-    const services = await ServiceLink.find({})
-    response.json(services)
+    const services = await Service.find({})
+    const links = services.map(({ path, link }) => ({
+      path,
+      ...link
+    }))
+    response.json(links)
   } catch (exception) {
     next(exception)
   }
