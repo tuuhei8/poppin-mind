@@ -7,7 +7,6 @@ const middleware = require('./utils/middleware')
 const servicesRouter = require('./controllers/services')
 const pricesRouter = require('./controllers/prices')
 const qualificationsRouter = require('./controllers/qualifications')
-const serviceLinksRouter = require('./controllers/serviceLinks')
 
 const app = express()
 
@@ -35,7 +34,6 @@ app.use('/:path', express.static('dist'))
 app.use(morgan('tiny'))
 
 app.use('/api/services', servicesRouter)
-app.use('/api/serviceLinks', serviceLinksRouter)
 app.use('/api/prices', pricesRouter)
 app.use('/api/qualifications', qualificationsRouter)
 

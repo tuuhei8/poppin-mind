@@ -7,14 +7,14 @@ import Pricing from './pages/Pricing'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import Service from './pages/Service'
-import serviceLinksService from './services/serviceLinks'
+import servicesService from './services/services'
 import { useEffect, useState } from 'react'
 
 export default function App() {
   const [serviceLinks, setServiceLinks] = useState([])
   
   useEffect(() => {
-    serviceLinksService.getAll()
+    servicesService.getLinks()
       .then(links => setServiceLinks(links))
       .catch(err => console.error(err))
     }, [])

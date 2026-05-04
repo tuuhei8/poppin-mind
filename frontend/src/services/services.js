@@ -1,8 +1,8 @@
 import axios from 'axios'
 const baseUrl = '/api/services'
 
-const getAll = () => {
-  const request = axios.get(baseUrl)
+const getLinks = () => {
+  const request = axios.get(`${baseUrl}/links`)
   return request.then(response => response.data)
 }
 
@@ -11,4 +11,4 @@ const getServiceByPath = (path) => {
   return request.then(response => response.data)
 }
 
-export default { getAll, getServiceByPath }
+export default { getLinks, getServiceByPath }

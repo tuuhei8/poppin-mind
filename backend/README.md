@@ -19,7 +19,7 @@ In the app.js file the express.static('dist') statements serve the frontend prod
 
 #### Servicelinks and Services
 
-Both /api/servicelinks and /api/services/:path connect to a MongoDB collection named 'services' and return the relevant parts of the document(s). See services-example for details on document structure.
+Both /api/services/links and /api/services/:path connect to a MongoDB collection named 'services' and return the relevant parts of the document(s). See services-example for details on document structure.
 
 #### Pricing
 
@@ -35,7 +35,7 @@ There are four endpoints currently available:
 
 1. /api/services/:path
 
-2. /api/servicelinks
+2. /api/services/links
 
 3. /api/qualifications
 
