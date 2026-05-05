@@ -126,7 +126,6 @@ export default function Contact({ services }) {
       <section className="section">
         <div className="container">
           <div className="contact-grid">
-
             <div className="fade-in fade-in-delay-1">
               {submitted 
                 ? <div className="trust-badge">
