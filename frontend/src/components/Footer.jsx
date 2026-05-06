@@ -33,6 +33,10 @@ const content = {
 function ServiceList({ serviceLinks }) {
   const { language } = useLanguage()
 
+  if (!serviceLinks) {
+    return null
+  }
+
   return (
     <>
       {serviceLinks.map(s => {

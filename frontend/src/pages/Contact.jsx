@@ -60,6 +60,10 @@ const content = {
 function ServiceOptions({ services }) {
   const { language } = useLanguage()
 
+  if (!services) {
+    return null
+  }
+
   return (
     <>
       {services.map(s => {
