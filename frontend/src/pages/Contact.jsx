@@ -118,7 +118,7 @@ export default function Contact({ services }) {
       setSubmitted(true)
       setTimeout(() => setSubmitted(false), 60000)
     } else {
-      console.error(data);
+      console.error(data)
       errorMessage()
     }
   }
