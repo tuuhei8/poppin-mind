@@ -254,52 +254,52 @@ Used by the dynamic service detail page, Home, About and Footer.
 {
   "id": "string",
   "path": "neuropsychiatric-coaching",
-    "link": {
-      "icon": "🧠",
-      "en": {
-        "title": "Neuropsychiatric coaching",
-        "summary": "Build mental resilience, develop focus, and cultivate a mindset that supports your goals."
-      },
-      "fi": {
-        "title": "Neuropsykiatrinen valmennus",
-        "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
-      }
+  "link": {
+    "icon": "🧠",
+    "en": {
+      "title": "Neuropsychiatric coaching",
+      "summary": "Build mental resilience, develop focus, and cultivate a mindset that supports your goals."
     },
-    "content": {
-      "en": {
-        "title": "Neuropsychiatric coaching",
-        "subtitle":"Build resilience, confidence, and mental clarity through a supportive and goal-oriented process.",
-        "what": {
-          "icon": "🧠",
-          "title": "What is neuropsychiatric coaching?",
-          "p1": "Neuropsychiatric coaching helps you strengthen the mindset and habits that support performance, wellbeing, and everyday life. It can help with confidence, motivation, focus, and emotional resilience.",
-          "p2": "Sessions are practical, reflective, and tailored to you. Together, we identify what is getting in your way and what will move you forward.",
-          "list": []
-        },
-        "how": {
-          "icon": "⚡",
-          "title": "What can it help with?",
-          "p1": "",
-          "p2": "",
-          "list": [
+    "fi": {
+      "title": "Neuropsykiatrinen valmennus",
+      "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
+    }
+  },
+  "content": {
+    "en": {
+      "title": "Neuropsychiatric coaching",
+      "subtitle":"Build resilience, confidence, and mental clarity through a supportive and goal-oriented process.",
+      "what": {
+        "icon": "🧠",
+        "title": "What is neuropsychiatric coaching?",
+        "p1": "Neuropsychiatric coaching helps you strengthen the mindset and habits that support performance, wellbeing, and everyday life. It can help with confidence, motivation, focus, and emotional resilience.",
+        "p2": "Sessions are practical, reflective, and tailored to you. Together, we identify what is getting in your way and what will move you forward.",
+        "list": []
+      },
+      "how": {
+        "icon": "⚡",
+        "title": "What can it help with?",
+        "p1": "",
+        "p2": "",
+        "list": [
               "Building confidence and self-belief",
               "Managing stress and pressure",
               "Improving focus and motivation",
               "Strengthening emotional resilience",
               "Preparing for change or challenges"
               ]
-        },
-        "who": {
-          "icon": "🌟",
-          "title": "Who is it for?",
-          "p1": "Neuropsychiatric coaching is for anyone who wants support in developing their inner resources. Whether you are facing a demanding season, striving toward a goal, or simply wanting to feel stronger and clearer, this approach can help.",
-          "p2": "It is suitable for individuals, students, professionals, and anyone seeking practical, supportive growth.",
-          "list": []
-        },
-        "contactBannerTitle": "Ready to strengthen your mindset?",
-        "contactBannerText": "Let us talk about what support would be most helpful for you.",
-        "contactBannerButton": "Book a Session"
       },
+      "who": {
+        "icon": "🌟",
+        "title": "Who is it for?",
+        "p1": "Neuropsychiatric coaching is for anyone who wants support in developing their inner resources. Whether you are facing a demanding season, striving toward a goal, or simply wanting to feel stronger and clearer, this approach can help.",
+        "p2": "It is suitable for individuals, students, professionals, and anyone seeking practical, supportive growth.",
+        "list": []
+      },
+      "contactBannerTitle": "Ready to strengthen your mindset?",
+      "contactBannerText": "Let us talk about what support would be most helpful for you.",
+      "contactBannerButton": "Book a Session"
+    },
     "fi": {
       "title": "Neuropsykiatrinen valmennus",
       "subtitle": "Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.",  
