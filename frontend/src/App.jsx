@@ -12,13 +12,13 @@ import { useEffect, useState } from 'react'
 
 export default function App() {
   const [serviceLinks, setServiceLinks] = useState([])
-  
+
   useEffect(() => {
     servicesService.getLinks()
       .then(links => setServiceLinks(links))
       .catch(err => console.error(err))
     }, [])
-  
+
   return (
     <BrowserRouter>
       <Routes>
