@@ -8,7 +8,7 @@ export default function ServiceLinks({ serviceLinks, learn }) {
     fi: { message: 'Pahoittelut, meidän päässämme näyttäisi olevan ongelma.' }
   }
 
-  if (serviceLinks.length === 0) {
+  if (!serviceLinks || serviceLinks.length === 0) {
     return <div>{error[language].message}</div>
   }
 

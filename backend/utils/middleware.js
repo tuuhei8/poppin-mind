@@ -7,8 +7,10 @@ const unknownEndpoint = (request, response) => {
 const errorHandler = (error, request, response, next) => {
   logger.error(error.message)
 
-  if (error.name === 'TypeError') {
+  if (error.name === 'TypeError' && error.message.includes('content')) {
     return response.status(400).send({ error: 'malformatted path' })
+  } else if (error.name === 'TypeError') {
+    return response.status(404).end()
   }
 
   next(error)
