@@ -89,7 +89,7 @@ export default function Contact({ services }) {
   const [error, setError] = useState(null)
 
   function errorMessage() {
-    setError(t.error);
+    setError(t.error)
     setTimeout(() => setError(null), 20000)
   }
 
@@ -97,7 +97,7 @@ export default function Contact({ services }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target)
 
     try {
       formData.append("access_key", /*ACCESS_KEY_HERE*/)
