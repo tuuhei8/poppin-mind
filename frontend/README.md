@@ -233,8 +233,7 @@ API calls are grouped in `src/services/`:
 
 | File | Backend endpoint | Used by |
 |---|---|---|
-| `serviceLinks.js` | `/api/serviceLinks` | Home, Services, Footer, Contact service dropdown |
-| `services.js` | `/api/services`, `/api/services/:path` | Individual service pages |
+| `services.js` | `/api/services/links`, `/api/services/:path` | Individual service pages Home, Services, Footer, Contact service dropdown |
 | `prices.js` | `/api/prices` | Pricing page |
 | `qualifications.js` | `/api/qualifications` | About page |
 
@@ -248,7 +247,7 @@ The frontend expects the backend to return JSON with the following shapes.
 
 ### Services
 
-Used by the dynamic service detail page, Home, About and Footer.
+Used by the dynamic service detail page, Home, About, Contact and Footer.
 
 ```json
 {
