@@ -54,7 +54,7 @@ Current package lock expects a modern Node runtime because the resolved Vite and
 
 - Fully responsive layout for desktop, tablet, and mobile screens
 - English/Finnish language toggle with language persisted in `localStorage`
-- Dynamic service cards loaded from `/api/serviceLinks`
+- Dynamic service cards loaded from `/api/services/links`
 - Dynamic individual service pages loaded by URL path from `/api/services/:path`
 - Dynamic pricing cards loaded from `/api/prices`
 - Dynamic qualification list loaded from `/api/qualifications`
@@ -99,7 +99,6 @@ frontend/
     ├── services/
     │   ├── prices.js
     │   ├── qualifications.js
-    │   ├── serviceLinks.js
     │   └── services.js
     └── styles/
         └── global.css
@@ -247,67 +246,64 @@ The frontend uses relative `/api/...` URLs so it works cleanly when served from 
 
 The frontend expects the backend to return JSON with the following shapes.
 
-### Service Links
-
-Used for service cards, footer links, and the contact form service dropdown.
-
-```json
-{
-  "id": "string",
-  "path": "neuropsychiatric-coaching",
-  "icon": "🧠",
-  "en": {
-    "title": "Neuropsychiatric Coaching",
-    "summary": "Short English summary."
-  },
-  "fi": {
-    "title": "Neuropsykiatrinen valmennus",
-    "summary": "Lyhyt suomenkielinen kuvaus."
-  }
-}
-```
-
-Important: `path` must match the matching service document path, because service cards link to `/services/{path}`.
-
 ### Services
 
-Used by the dynamic service detail page.
+Used by the dynamic service detail page, Home, About and Footer.
 
 ```json
 {
   "id": "string",
   "path": "neuropsychiatric-coaching",
-  "en": {
-    "title": "Service title",
-    "subtitle": "Service subtitle",
-    "what": {
+    "link": {
       "icon": "🧠",
-      "title": "Section title",
-      "p1": "First paragraph.",
-      "p2": "Second paragraph.",
-      "list": []
+      "en": {
+        "title": "Neuropsychiatric coaching",
+        "summary": "Build mental resilience, develop focus, and cultivate a mindset that supports your goals."
+      },
+      "fi": {
+        "title": "Neuropsykiatrinen valmennus",
+        "summary": "Rakenna resilienssiä, itseluottamusta ja mielen selkeyttä tukevassa ja tavoitteellisessa prosessissa."
+      }
     },
-    "how": {
-      "icon": "⚡",
-      "title": "Section title",
-      "p1": "",
-      "p2": "",
-      "list": ["List item"]
-    },
-    "who": {
-      "icon": "🌟",
-      "title": "Section title",
-      "p1": "First paragraph.",
-      "p2": "Second paragraph.",
-      "list": []
-    },
-    "contactBannerTitle": "CTA title",
-    "contactBannerText": "CTA text",
-    "contactBannerButton": "CTA button"
-  },
-  "fi": {
-    "title": "Palvelun otsikko",
-    "subtitle": "Palvelun alaotsikko"
+    "content": {
+      "en": {
+        "title": "Neuropsychiatric coaching",
+        "subtitle":"Build resilience, confidence, and mental clarity through a supportive and goal-oriented process.",
+        "what": {
+          "icon": "🧠",
+          "title": "What is neuropsychiatric coaching?",
+          "p1": "Neuropsychiatric coaching helps you strengthen the mindset and habits that support performance, wellbeing, and everyday life. It can help with confidence, motivation, focus, and emotional resilience.",
+          "p2": "Sessions are practical, reflective, and tailored to you. Together, we identify what is getting in your way and what will move you forward.",
+          "list": []
+        },
+        "how": {
+          "icon": "⚡",
+          "title": "What can it help with?",
+          "p1": "",
+          "p2": "",
+          "list": [
+              "Building confidence and self-belief",
+              "Managing stress and pressure",
+              "Improving focus and motivation",
+              "Strengthening emotional resilience",
+              "Preparing for change or challenges"
+              ]
+        },
+        "who": {
+          "icon": "🌟",
+          "title": "Who is it for?",
+          "p1": "Neuropsychiatric coaching is for anyone who wants support in developing their inner resources. Whether you are facing a demanding season, striving toward a goal, or simply wanting to feel stronger and clearer, this approach can help.",
+          "p2": "It is suitable for individuals, students, professionals, and anyone seeking practical, supportive growth.",
+          "list": []
+        },
+        "contactBannerTitle": "Ready to strengthen your mindset?",
+        "contactBannerText": "Let us talk about what support would be most helpful for you.",
+        "contactBannerButton": "Book a Session"
+      },
+    "fi": {
+      "title": "Neuropsykiatrinen valmennus",
+      "subtitle": "Vahvista henkistä resilienssiäsi, kehitä keskittymistäsi ja rakenna ajattelutapaa, joka tukee tavoitteitasi.",  
+    }
   }
 }
 ```
@@ -394,17 +390,9 @@ Service cards and service detail pages are not hard-coded as separate React page
 
 To add a new service:
 
-1. Add a new `serviceLinks` document.
-2. Add a matching `services` document.
-3. Make sure both documents use the same `path` value.
-4. Include both `en` and `fi` content.
-
-Example:
-
-```text
-serviceLinks.path = "new-service"
-services.path = "new-service"
-```
+1. Add a new `services` document.
+2. Include `path` value.
+3. Include both `en` and `fi` content.
 
 The frontend will automatically create links to:
 
@@ -548,7 +536,7 @@ The frontend currently calls relative `/api/...` endpoints. If deploying the fro
 
 - [ ] Replace `ACCESS_KEY_HERE` in `src/pages/Contact.jsx` with the Web3Forms access key.
 - [ ] Replace `info@example.com` with the real business email address.
-- [ ] Confirm the backend is running and serving `/api/serviceLinks`, `/api/services`, `/api/prices`, and `/api/qualifications`.
+- [ ] Confirm the backend is running and serving `/api/services`, `/api/prices`, and `/api/qualifications`.
 - [ ] Confirm MongoDB documents include both `en` and `fi` content.
 - [ ] Confirm every service link has a matching service document with the same `path`.
 - [ ] Confirm pricing documents include `price`, `time`, and `outline` if card highlighting/duration is required.
@@ -568,7 +556,7 @@ Check that the backend is running on port `3000` in development and that Vite is
 
 ### Service cards show an error message
 
-`ServiceLinks.jsx` shows a fallback message when no service links are available. Check `/api/serviceLinks` and confirm the database contains service link documents.
+`ServiceLinks.jsx` shows a fallback message when no service links are available. Check `/api/services/links` and confirm the database contains service link fields.
 
 ### A service detail page shows 404
 
