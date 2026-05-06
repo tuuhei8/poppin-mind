@@ -35,7 +35,7 @@ const content = {
   }
 }
 
-export default function About() {
+function Qualifications() {
   const { language } = useLanguage()
   const t = content[language]
   const [qualifications, setQualifications] = useState([])
@@ -46,6 +46,37 @@ export default function About() {
       .then(qualifications => setQualifications(qualifications))
       .catch(err => console.error(err))
   }, [])
+
+  if (!qualifications) {
+    return null
+  }
+
+  return (
+    qualifications.map((q) => {
+      const qual = q[language]
+
+      if (!qual) {
+        return null
+      }
+
+      return (
+        <div className="qualification-item fade-in" key={q.id}>
+          <div className="qualification-item__icon">
+            {q.icon}
+          </div>
+          <div>
+            <h4>{qual.title}</h4>
+            <p>{qual.text}</p>
+          </div>
+        </div>
+              )}
+            )
+  )
+}
+
+export default function About() {
+  const { language } = useLanguage()
+  const t = content[language]
 
   return (
     <>
@@ -73,23 +104,7 @@ export default function About() {
             <h2 className="section-header__title">{t.qualTitle}</h2>
           </div>
           <div className="qualifications-list">
-            {qualifications.map((q) => {
-              const qual = q[language]
-
-              if (!qual) {
-                return null
-              }
-
-              return (
-                <div className="qualification-item fade-in" key={q.id}>
-                  <div className="qualification-item__icon">{q.icon}</div>
-                  <div>
-                    <h4>{qual.title}</h4>
-                    <p>{qual.text}</p>
-                  </div>
-                </div>
-              )}
-            )}
+            <Qualifications />
           </div>
         </div>
       </section>

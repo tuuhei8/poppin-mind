@@ -67,7 +67,7 @@ const content = {
   }
 }
 
-export default function Pricing() {
+function Plans() {
   const { language } = useLanguage()
   const t = content[language]
   const [plans, setPlans] = useState([])
@@ -78,7 +78,50 @@ export default function Pricing() {
       .then(plans => setPlans(plans))
       .catch(err => console.error(err))
   }, [])
-  
+
+  if (!plans) {
+    return null
+  }
+
+  return (
+    plans.map((p, index) => {
+      const plan = p[language]
+
+      if (!plan) {
+        return null
+      }
+                
+      let price = `${p.price} €`
+      if (p.price === '0' || p.price === 'Free' || p.price === 'Maksuton') {
+        price = t.free
+      }
+
+      return (
+        <div className={`pricing-card ${p.outline === 'primary' ? 'pricing-card--featured' : ''} fade-in fade-in-delay-${index+1}`} key={p.id}>
+          <h3 className="pricing-card__title">{plan.title}</h3>
+          <p className="pricing-card__desc">{plan.subtitle}</p>
+          <div className="pricing-card__price">
+            {p.price ? price : 'Error'} <span>{price === t.free ? '' : t.session}</span>
+          </div>
+          <p className="pricing-card__duration">{p.time} {t.minutes}</p>
+          <ul className="pricing-card__features">
+            {plan.features.map((item) => 
+              <li key={item}>{item}</li>
+            )}
+          </ul>
+          <Link to="/contact" className={`btn ${plan.outline==='primary'?'btn--primary':'btn--outline'}`} style={{ width: '100%', textAlign: 'center' }}>
+            {plan.button}
+          </Link>
+        </div>
+      )}
+    )
+  )
+}
+
+export default function Pricing() {
+  const { language } = useLanguage()
+  const t = content[language]
+
   return (
     <>
       <PageHero tag={t.tag} title={t.title} subtitle={t.subtitle} />
@@ -86,37 +129,7 @@ export default function Pricing() {
       <section className="section">
         <div className="container">
           <div className="pricing-grid">
-            {plans.map((p, index) => {
-              const plan = p[language]
-
-              if (!plan) {
-                return null
-              }
-              
-              let price = `${p.price} €`
-              if (p.price === '0' || p.price === 'Free' || p.price === 'Maksuton') {
-                price = t.free
-              }
-
-              return (
-                <div className={`pricing-card ${p.outline === 'primary' ? 'pricing-card--featured' : ''} fade-in fade-in-delay-${index+1}`} key={p.id}>
-                  <h3 className="pricing-card__title">{plan.title}</h3>
-                  <p className="pricing-card__desc">{plan.subtitle}</p>
-                  <div className="pricing-card__price">
-                    {p.price ? price : 'Error'} <span>{price === t.free ? '' : t.session}</span>
-                  </div>
-                  <p className="pricing-card__duration">{p.time} {t.minutes}</p>
-                  <ul className="pricing-card__features">
-                    {plan.features.map((item) => 
-                      <li key={item}>{item}</li>
-                    )}
-                  </ul>
-                  <Link to="/contact" className={`btn ${plan.outline==='primary'?'btn--primary':'btn--outline'}`} style={{ width: '100%', textAlign: 'center' }}>
-                    {plan.button}
-                  </Link>
-                </div>
-              )}
-            )}
+            <Plans />
           </div>
         </div>
       </section>
