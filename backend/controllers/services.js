@@ -18,13 +18,9 @@ servicesRouter.get('/links', async (request, response, next) => {
 
 servicesRouter.get('/:path', async (request, response, next) => {
   try {
-    const service = await Service.findOne({path: request.params.path})
-    if (service && service.content) {
-      const content = service.content
-      response.json(content)
-    } else {
-      response.status(400).send({ error: 'malformatted path' })
-    }
+    const service = await Service.findOne({path: request.params.path})  
+    const content = service.content
+    response.json(content)
   } catch (exception) {
     next(exception)
   }
