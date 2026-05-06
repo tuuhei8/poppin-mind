@@ -8,7 +8,7 @@ const errorHandler = (error, request, response, next) => {
   logger.error(error.message)
 
   if (error.name === 'TypeError') {
-    return response.status(400).send({ error: 'malformatted path'})
+    return response.status(400).send({ error: 'malformatted path' })
   }
 
   next(error)
